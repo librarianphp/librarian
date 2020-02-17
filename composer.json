@@ -1,0 +1,17 @@
+{
+  "name": "minicli/miniweb",
+  "description": "Miniweb - minimalist PHP pages",
+  "license": "MIT",
+  "homepage": "https://github.com/minicli/application",
+  "keywords": ["cli","command-line"],
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/",
+      "Miniweb\\": "src/"
+    }
+  },
+  "require": {
+    "minicli/minicli": "^1.0",
+    "twig/twig": "^3.0"
+  }
+}
