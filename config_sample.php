@@ -1,7 +1,7 @@
 <?php
 
 //////////////////////////////////
-// minicli/miniweb configuration
+// minicli/librarian configuration
 //////////////////////////////////
 
 return [
@@ -17,5 +17,10 @@ return [
 
     # Static Data Path
     'data_path' => __DIR__ . '/app/Resources/data',
+
+    # Site Info
+    'site_name' => 'Librarian',
+    'site_description' => 'Tiny CMS for static content',
+    'site_root' => '/',
 
 ];

@@ -33,4 +33,16 @@ class Response
     {
         $this->content = $content;
     }
+
+    static function redirect($url, $statusCode = 303)
+    {
+        header('Location: ' . $url, true, $statusCode);
+        exit;
+    }
+
+    static function notfound()
+    {
+        header("HTTP/1.0 404 Not Found");
+        exit;
+    }
 }

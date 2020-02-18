@@ -2,37 +2,46 @@
 
 namespace App\Command\Web;
 
+use Miniweb\Exception\ContentNotFoundException;
+use Miniweb\Provider\TwigServiceProvider;
 use Miniweb\Response;
+use Miniweb\StaticContent;
 use Miniweb\WebController;
-use Twig\Environment;
 
+/**
+ * Class StaticController
+ * Renders content from the data dirs
+ * @package App\Command\Web
+ */
 class StaticController extends WebController
 {
+    /**
+     * @throws \Exception
+     */
     public function handle()
     {
-        /** @var Environment $twig */
+        /** @var TwigServiceProvider $twig */
         $twig = $this->getApp()->twig;
 
         $request = $this->getRequest();
-        $slug = $request->getSlug();
-
-        //search in data dirs
 
         if (!$this->getApp()->config->has('data_path')) {
-            throw new \Exception("Missing Static Data Path.");
+            Response::redirect('/error');
         }
 
         $data_path = $this->getApp()->config->data_path;
 
-        $markdown = '';
-        if (is_file($data_path . '/' . $request->getRoute() . '/' . $slug . '.md')) {
-            $markdown = file_get_contents($data_path . '/' . $request->getRoute() . '/' . $slug . '.md');
+        $content = new StaticContent($data_path, $request->getRoute(), $request->getSlug());
+
+        try {
+            $content->load();
+        } catch (ContentNotFoundException $e) {
+           Response::redirect('/notfound');
         }
 
-        $output = $twig->render('index.html.twig', ['title' => $this->getRequest()->getSlug(), 'markdown' => $markdown]);
+        $output = $twig->render('content/static.html.twig', ['content' => $content]);
 
         $response = new Response($output);
-
         $response->output();
     }
 }

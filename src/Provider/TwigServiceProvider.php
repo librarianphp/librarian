@@ -31,6 +31,18 @@ class TwigServiceProvider implements ServiceInterface
         $this->twig->addFunction(new TwigFunction('include_snippet', function() {
             return "[FILE CONTENT HERE]";
         }));
+
+        $this->twig->addFunction(new TwigFunction('site_title', function() use($app) {
+            return $app->config->site_name;
+        }));
+
+        $this->twig->addFunction(new TwigFunction('site_description', function() use($app) {
+            return $app->config->site_description;
+        }));
+
+        $this->twig->addFunction(new TwigFunction('site_root', function() use($app) {
+            return $app->config->site_root;
+        }));
     }
 
     public function setTemplatesPath($path)
