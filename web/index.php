@@ -16,6 +16,7 @@ try {
 
     /** @var RequestServiceProvider $request */
     $route = $app->request->getCallableRoute();
+
     $app->runCommand(['minicli', 'web', $route]);
 
 } catch (RouteNotFoundException $e) {

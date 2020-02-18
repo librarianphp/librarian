@@ -1,10 +1,12 @@
 <?php
 
+//////////////////////////////////
+// minicli/miniweb configuration
+//////////////////////////////////
+
 return [
 
-    /////////////////////////
-    // configuration
-    /////////////////////////
+    # Command Controllers Path
     'app_path' => __DIR__ . '/app/Command',
 
     # CLI theme
@@ -12,5 +14,8 @@ return [
 
     # Templates Path
     'templates_path' => __DIR__ . '/app/Resources/templates',
+
+    # Static Data Path
+    'data_path' => __DIR__ . '/app/Resources/data',
 
 ];

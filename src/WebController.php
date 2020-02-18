@@ -57,10 +57,13 @@ abstract class WebController implements ControllerInterface
     }
 
     /**
-     * @return RequestServiceProvider
+     * @return Request
      */
     public function getRequest()
     {
-        return $this->getApp()->request;
+        /** @var RequestServiceProvider $request */
+        $request_provider = $this->getApp()->request;
+
+        return $request_provider->getRequest();
     }
 }
