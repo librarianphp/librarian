@@ -1,0 +1,19 @@
+<div class="blog-post">
+    {% if content.cover_image %}
+        <img src="{{ content.cover_image|raw }}" alt="cover image">
+    {% endif %}
+
+    <h3 class="blog-post-title"><a href="{{ site_root() }}{{ content.link }}">{{ content.title }}</a></h3>
+    <p class="blog-post-meta">{{ content.published }} by <a href="#">Erika</a></p>
+
+    {% if full %}
+        {{ content.body_html|raw }}
+    {% else %}
+        {{ content.description|default('No description provided.') }}
+        <p><a href="{{ content.link }}">Read More...</a></p>
+    {% endif %}
+
+    {% if content.tag_list %}
+        <p class="blog-post-meta">Posted under: {{ content.tag_list }}</p>
+    {% endif %}
+</div>

@@ -2,9 +2,10 @@
 
 namespace App\Command\Web;
 
-use Miniweb\Provider\TwigServiceProvider;
-use Miniweb\Response;
-use Miniweb\WebController;
+use Minicli\Miniweb\Provider\TwigServiceProvider;
+use Minicli\Miniweb\WebController;
+use Minicli\Miniweb\Response;
+use Librarian\Provider\ContentServiceProvider;
 
 class IndexController extends WebController
 {
@@ -12,7 +13,14 @@ class IndexController extends WebController
     {
         /** @var TwigServiceProvider $twig */
         $twig = $this->getApp()->twig;
-        $output = $twig->render('content/index.html.twig', []);
+
+        /** @var ContentServiceProvider $static_provider */
+        $content_provider = $this->getApp()->content;
+        $content_list = $content_provider->fetchAll();
+
+        $output = $twig->render('content/index.html.twig', [
+            'content_list'  => $content_list
+        ]);
 
         $response = new Response($output);
 

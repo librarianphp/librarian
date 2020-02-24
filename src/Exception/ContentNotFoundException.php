@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Miniweb\Exception;
+namespace Librarian\Exception;
 
 
 class ContentNotFoundException extends \Exception

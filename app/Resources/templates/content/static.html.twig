@@ -1,15 +1,10 @@
-{% extends 'main.html.twig' %}
+{% extends 'base.html.twig' %}
 
-{% block title %}{{ content.front_matter.title|default('MiniWeb') }}{% endblock %}
+{% block featured_content %}
 
-{% block description %}{{ content.front_matter.description|default('MiniWeb is a solution for simple PHP websites and documentation.') }}{% endblock %}
-
+{% endblock %}
 
 {% block content %}
-    <h1 class="cover-heading">{{ content.front_matter.title|default('MiniWeb') }}</h1>
-    <p class="lead">{{ content|raw }}</p>
-    <p class="lead">
-        <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
-    </p>
+    {% include '_partials/post.html.twig' with { 'content': content, 'full': true } %}
 {% endblock%}
 

@@ -2,8 +2,8 @@
 
 namespace App\Command\Web;
 
-use Miniweb\Response;
-use Miniweb\WebController;
+use Minicli\Miniweb\Response;
+use Minicli\Miniweb\WebController;
 use Twig\Environment;
 
 class NotFoundController extends WebController
