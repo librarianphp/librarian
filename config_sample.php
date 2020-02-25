@@ -21,13 +21,18 @@ return [
     # Cache Dir
     'cache_path' => __DIR__ . '/var/cache',
 
-    # Site Info
+    # Librarian site Info
     'site_name' => 'Librarian',
     'site_description' => 'Micro CMS for static content',
     'site_root' => '/',
+    'site_about' => '_p/about',
+    'social_links' => [
+        'Twitter' => 'https://twitter.com/erikaheidi',
+        'Github'  => 'https://github.com/minicli/librarian',
+    ],
 
     # Dev.to Settings
     'devto_username' => 'erikaheidi',
-    'devto_datadir' =>  'dev',
+    'devto_datadir' =>  '_to',
 
 ];

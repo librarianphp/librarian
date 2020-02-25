@@ -28,6 +28,9 @@ class Content
     /** @var string List of tags*/
     public $tag_list;
 
+    /** @var string Linked list of tags */
+    public $linked_tag_list;
+
     /** @var DateTime Published date/time */
     public $published;
 
@@ -93,6 +96,7 @@ class Content
         $this->published = $this->getDate();
         $this->description = $this->frontMatterGet('description');
         $this->tag_list = $this->frontMatterGet('tags');
+        $this->linked_tag_list = $this->getLinkedTagList();
         $this->slug = $this->getSlug();
 
         $this->body_markdown = $parser->getMarkdownBody();
@@ -146,29 +150,55 @@ class Content
     }
 
     /**
+     * @return array
+     */
+    public function getTagsAsArray()
+    {
+        $tags = [];
+
+        if ($this->tag_list) {
+            $article_tags = explode(',', $this->tag_list);
+
+            foreach ($article_tags as $article_tag) {
+                $tag_name = trim(str_replace('#', '', $article_tag));
+
+                $tags[] = $tag_name;
+            }
+        }
+
+        return $tags;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLinkedTagList()
+    {
+        $list = "";
+        $count = 0;
+
+        if ($this->tag_list) {
+            $tags = $this->getTagsAsArray();
+
+            foreach ($tags as $article_tag) {
+                if ($count) {
+                    $list .= ", ";
+                }
+
+                $list .= "<a href='/tag/$article_tag' title='All posts under the $article_tag tag'>" . $article_tag . "</a>";
+                $count++;
+            }
+        }
+
+        return $list;
+    }
+
+    /**
      * @return string|string[]
      */
     public function getSlug()
     {
         return str_replace('.md', '', basename($this->path));
-    }
-
-    /**
-     * @return array
-     */
-    public function toArray()
-    {
-        return [
-            'title'         => $this->title,
-            'cover_image'   => $this->cover_image,
-            'description'   => $this->description,
-            'published'     => $this->published,
-            'tag_list'      => $this->tag_list,
-            'body_markdown' => $this->body_markdown,
-            'body_html'     => $this->body_html,
-            'slug'          => $this->slug,
-            'link'          => $this->getLink()
-        ];
     }
 
     /**

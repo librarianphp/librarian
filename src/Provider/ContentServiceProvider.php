@@ -3,6 +3,7 @@
 namespace Librarian\Provider;
 
 use Librarian\Content;
+use Librarian\ContentCollection;
 use Librarian\Exception\ContentNotFoundException;
 use Minicli\App;
 use Minicli\ServiceInterface;
@@ -37,7 +38,8 @@ class ContentServiceProvider implements ServiceInterface
 
     /**
      * @param Request $request
-     * @return array|null
+     * @return Content
+     * @throws \Exception
      */
     public function fetch(Request $request)
     {
@@ -53,47 +55,36 @@ class ContentServiceProvider implements ServiceInterface
             return null;
         }
 
-        return $content->toArray();
+        return $content;
     }
 
     /**
-     * @return array
+     * @param int $start
+     * @param int $limit
+     * @return ContentCollection
      */
-    public function fetchAll()
+    public function fetchAll($start = 0, $limit = 20)
     {
-        $feed = [];
-
+        $list = [];
         foreach (glob($this->data_path . '/*', GLOB_ONLYDIR) as $route) {
             $content_type = basename($route);
-
-            $cache = new FileCache($this->cache_path);
-            /*$cached_content = $cache->getCachedUnlessExpired($content_type);
-
-            if ($cached_content !== null) {
-                return json_decode($cached_content, true);
-            }*/
-
-            $feed = [];
 
             foreach (glob($route . '/*.md') as $filename) {
 
                 $content = new Content($filename);
 
                 try {
-                    $content->load();
                     $content->setRoute($content_type);
-                    $feed[] = $content->toArray();
+                    $list[] = $content;
                 } catch (ContentNotFoundException $e) {
                     continue;
+                } catch (\Exception $e) {
                 }
             }
-
-            //write to cache file
-            $cache->save(json_encode($feed), $content_type);
         }
 
-        //newest first
-        return array_reverse($feed);
+        $ordered_content = array_reverse($list);
+        return new ContentCollection(array_slice($ordered_content, $start, $limit));
     }
 
     /**
@@ -110,12 +101,14 @@ class ContentServiceProvider implements ServiceInterface
             return json_decode($cached_content, true);
         }
 
-        $content = $this->fetchAll();
+        /** @var ContentCollection $content */
+        $content = $this->fetchAll(0, 1000);
         $tags = [];
 
+        /** @var Content $article */
         foreach ($content as $article) {
-            if ($article['tag_list']) {
-                $article_tags = explode(',', $article['tag_list']);
+            if ($article->tag_list) {
+                $article_tags = explode(',', $article->tag_list);
 
                 foreach ($article_tags as $article_tag) {
                     $tag_name = trim(str_replace('#', '', $article_tag));
@@ -148,7 +141,7 @@ class ContentServiceProvider implements ServiceInterface
 
     /**
      * @param $route
-     * @return array
+     * @return ContentCollection
      * @throws ContentNotFoundException
      */
     public function fetchFrom($route)
@@ -159,9 +152,9 @@ class ContentServiceProvider implements ServiceInterface
             $content = new Content($filename);
             $content->load();
             $content->setRoute($route);
-            $feed[] = $content->toArray();
+            $feed[] = $content;
         }
 
-        return $feed;
+        return new ContentCollection(array_reverse($feed));
     }
 }

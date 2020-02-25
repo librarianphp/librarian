@@ -1,6 +1,6 @@
 <div class="blog-post">
     {% if content.cover_image %}
-        <img src="{{ content.cover_image|raw }}" alt="cover image">
+        <img class="cover-image" src="{{ content.cover_image|raw }}" alt="cover image">
     {% endif %}
 
     <h3 class="blog-post-title"><a href="{{ site_root() }}{{ content.link }}">{{ content.title }}</a></h3>
@@ -14,6 +14,6 @@
     {% endif %}
 
     {% if content.tag_list %}
-        <p class="blog-post-meta">Posted under: {{ content.tag_list }}</p>
+        <p class="tag-list">{{ content.linked_tag_list|raw }}</p>
     {% endif %}
 </div>

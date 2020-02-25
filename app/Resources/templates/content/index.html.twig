@@ -1,14 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block featured_content %}
-    <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
-        <div class="col-md-6 px-0">
-            <h1 class="display-4 font-italic">Librarian</h1>
-            <p class="lead my-3">Librarian is a tiny CMS for static content, written in PHP on top of <code>minicli</code>. Good for small read-only dynamic pages (content can be pulled from different sources) and documentation.</p>
-            <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">About...</a></p>
-        </div>
-    </div>
-{% endblock%}
 
 {% block content %}
     {% for post in content_list %}
