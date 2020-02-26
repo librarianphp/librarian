@@ -4,7 +4,6 @@
 namespace Librarian;
 
 use Librarian\Exception\ContentNotFoundException;
-use ParsedownExtra;
 use DateTime;
 
 /**
@@ -48,6 +47,9 @@ class Content
 
     /** @var string Route for this Content */
     public $route;
+
+    /** @var string Link to this content */
+    public $link;
 
 
     /**
@@ -98,7 +100,7 @@ class Content
         $this->tag_list = $this->frontMatterGet('tags');
         $this->linked_tag_list = $this->getLinkedTagList();
         $this->slug = $this->getSlug();
-
+        $this->link = $this->getLink();
         $this->body_markdown = $parser->getMarkdownBody();
         $this->body_html = $parser->getHtmlBody();
 

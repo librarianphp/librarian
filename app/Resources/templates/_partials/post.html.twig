@@ -10,7 +10,7 @@
         {{ content.body_html|raw }}
     {% else %}
         {{ content.description|default('No description provided.') }}
-        <p><a href="{{ content.link }}">Read More...</a></p>
+        <p><a href="{{ site_root() }}{{ content.link }}">Read More...</a></p>
     {% endif %}
 
     {% if content.tag_list %}
