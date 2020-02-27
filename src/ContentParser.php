@@ -46,8 +46,6 @@ class ContentParser
             $this->front_matter = [];
             $this->markdown = $this->original_content;
         }
-
-        //TODO: parse special tags such as {% youtube id %}
     }
 
     /**
@@ -70,29 +68,65 @@ class ContentParser
         return $vars;
     }
 
+    /**
+     * @return array
+     */
     public function getFrontMatter()
     {
         return $this->front_matter;
     }
 
+    /**
+     * @return string|null
+     */
     public function getOriginalContent()
     {
         return $this->original_content;
     }
 
+    /**
+     * @return string
+     */
     public function getMarkdownBody()
     {
         return $this->markdown;
     }
 
+    /**
+     * @return string|string[]|null
+     * @throws \Exception
+     */
     public function getHtmlBody()
     {
         $parsedown = new \ParsedownExtra();
 
         try {
-            return $parsedown->text($this->markdown);
+            $html = $this->parseSpecial($this->markdown);
+            return $parsedown->text($html);
         } catch (\Exception $e) {
             return null;
         }
+    }
+
+    /**
+     * Parses special tags such as {% youtube xyz %}
+     * @param $text
+     * @return string|string[]|null
+     */
+    public function parseSpecial($text)
+    {
+        return preg_replace_callback_array([
+            '/^\{%\s(post)\s(.*)\s%}/m' => function ($match) {
+                $link = $match[2];
+                return "<a href='$link'>$link</a>";
+            },
+            '/^\{%\s(youtube)\s(.*)\s%}/m' => function ($match) {
+                $link = "https://www.youtube.com/embed/" . $match[2];
+                return sprintf('<iframe width="560" height="315" src="%s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>', $link);
+            },
+            '/^\{%\s(.*)\s(.*)\s%}/m' => function ($match) {
+                return "<br>";
+            },
+        ], $text);
     }
 }
