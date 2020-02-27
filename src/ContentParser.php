@@ -3,6 +3,8 @@
 
 namespace Librarian;
 
+use Minicli\Curly\Client;
+
 /**
  * Class ContentParser
  * Parses a markdown content with an optional front matter
@@ -124,9 +126,30 @@ class ContentParser
                 $link = "https://www.youtube.com/embed/" . $match[2];
                 return sprintf('<iframe width="560" height="315" src="%s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>', $link);
             },
+            '/^\{%\s(twitter)\s(.*)\s%}/m' => function ($match) {
+                return $this->fetchTwitterEmbed($match[2]);
+            },
             '/^\{%\s(.*)\s(.*)\s%}/m' => function ($match) {
-                return "<br>";
+                return $match[2];
             },
         ], $text);
+    }
+
+    /**
+     * Returns embeddable tweet
+     * @param $tweet_id
+     * @return string
+     */
+    public function fetchTwitterEmbed($tweet_id)
+    {
+        $client = new Client();
+
+        $response = $client->get('https://publish.twitter.com/oembed?url=https://twitter.com/erikaheidi/status/' . $tweet_id);
+        if ($response['code'] == 200) {
+            $body = json_decode($response['body'], true);
+            return $body['html'];
+        }
+
+        return " [ <a href='https://twitter.com/erikaheidi/status/$tweet_id'>Original Tweet</a> ]";
     }
 }
