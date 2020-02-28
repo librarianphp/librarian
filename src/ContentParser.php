@@ -3,7 +3,8 @@
 
 namespace Librarian;
 
-use Minicli\Curly\Client;
+use Librarian\CustomTagParser\TwitterCustomTagParser;
+use Librarian\CustomTagParser\YoutubeCustomTagParser;
 
 /**
  * Class ContentParser
@@ -21,6 +22,8 @@ class ContentParser
     /** @var string */
     protected $markdown;
 
+    /** @var array */
+    protected $custom_tag_parsers;
     /**
      * ContentParser constructor.
      * @param string $content
@@ -32,6 +35,14 @@ class ContentParser
         if ($content !== null) {
             $this->parse();
         }
+
+        $this->addCustomTagParser('twitter', new TwitterCustomTagParser());
+        $this->addCustomTagParser('youtube', new YoutubeCustomTagParser());
+    }
+
+    public function addCustomTagParser($name, CustomTagParserInterface $tag_parser)
+    {
+        $this->custom_tag_parsers[$name] = $tag_parser;
     }
 
     /**
@@ -112,44 +123,23 @@ class ContentParser
 
     /**
      * Parses special tags such as {% youtube xyz %}
-     * @param $text
-     * @return string|string[]|null
+     * @param string $text
+     * @return string
      */
     public function parseSpecial($text)
     {
         return preg_replace_callback_array([
-            '/^\{%\s(post)\s(.*)\s%}/m' => function ($match) {
-                $link = $match[2];
-                return "<a href='$link'>$link</a>";
-            },
-            '/^\{%\s(youtube)\s(.*)\s%}/m' => function ($match) {
-                $link = "https://www.youtube.com/embed/" . $match[2];
-                return sprintf('<iframe width="560" height="315" src="%s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>', $link);
-            },
-            '/^\{%\s(twitter)\s(.*)\s%}/m' => function ($match) {
-                return $this->fetchTwitterEmbed($match[2]);
-            },
             '/^\{%\s(.*)\s(.*)\s%}/m' => function ($match) {
+
+                if (array_key_exists($match[1], $this->custom_tag_parsers)) {
+                    $parser = $this->custom_tag_parsers[$match[1]];
+                    if ($parser instanceof CustomTagParserInterface) {
+                        return $parser->parse($match[2]);
+                    }
+                }
+
                 return $match[2];
             },
         ], $text);
-    }
-
-    /**
-     * Returns embeddable tweet
-     * @param $tweet_id
-     * @return string
-     */
-    public function fetchTwitterEmbed($tweet_id)
-    {
-        $client = new Client();
-
-        $response = $client->get('https://publish.twitter.com/oembed?url=https://twitter.com/erikaheidi/status/' . $tweet_id);
-        if ($response['code'] == 200) {
-            $body = json_decode($response['body'], true);
-            return $body['html'];
-        }
-
-        return " [ <a href='https://twitter.com/erikaheidi/status/$tweet_id'>Original Tweet</a> ]";
     }
 }
