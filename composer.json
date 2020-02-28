@@ -14,5 +14,10 @@
     "minicli/miniweb": "^0.1.0",
     "minicli/curly": "^0.1.2",
     "minicli/librarian-core": "^0.1.0"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "@php -r \"file_exists('config.php') || copy('config_sample.php', 'config.php');\""
+    ]
   }
 }

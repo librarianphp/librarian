@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fd547bf8a0cb2beb6606aa271fa921c4",
+    "content-hash": "a712bd4fafe5a1b8b586ef35ab92a323",
     "packages": [
         {
             "name": "erusev/parsedown",
@@ -137,7 +137,7 @@
         },
         {
             "name": "minicli/librarian-core",
-            "version": "0.1",
+            "version": "0.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/minicli/librarian-core.git",
