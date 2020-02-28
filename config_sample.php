@@ -32,7 +32,7 @@ return [
     ],
 
     # Dev.to Settings
-    'devto_username' => 'erikaheidi',
-    'devto_datadir' =>  '_to',
+    //'devto_username' => 'erikaheidi',
+    //'devto_datadir' =>  '_to',
 
 ];
