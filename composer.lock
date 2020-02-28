@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "79be4f2c4ac50c371ed6b652b8cf0a4f",
+    "content-hash": "fd547bf8a0cb2beb6606aa271fa921c4",
     "packages": [
         {
             "name": "erusev/parsedown",
@@ -134,6 +134,38 @@
                 "wrapper"
             ],
             "time": "2020-02-24T10:33:43+00:00"
+        },
+        {
+            "name": "minicli/librarian-core",
+            "version": "0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/minicli/librarian-core.git",
+                "reference": "a28927ae1e092a49f25d7a4aa56e9c7084f7f5f1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/minicli/librarian-core/zipball/a28927ae1e092a49f25d7a4aa56e9c7084f7f5f1",
+                "reference": "a28927ae1e092a49f25d7a4aa56e9c7084f7f5f1",
+                "shasum": ""
+            },
+            "require": {
+                "erusev/parsedown-extra": "^0.8.1",
+                "ext-curl": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Librarian\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Core Librarian Package",
+            "homepage": "https://github.com/minicli/librarian-core",
+            "time": "2020-02-28T13:21:47+00:00"
         },
         {
             "name": "minicli/minicli",
