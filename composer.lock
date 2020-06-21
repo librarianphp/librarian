@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9bc8b4748e804bbfd837a05ecfc2b428",
+    "content-hash": "82bc151ee374332d51249947e333e11e",
     "packages": [
         {
             "name": "erusev/parsedown",
@@ -137,23 +137,24 @@
         },
         {
             "name": "minicli/librarian-core",
-            "version": "0.2",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/minicli/librarian-core.git",
-                "reference": "d17e7b94e84404d4f63ade3c8988a9ec0f5eaba7"
+                "reference": "06447cdcedd5db50d6e4c780f16e33cc6ea7c6ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/minicli/librarian-core/zipball/d17e7b94e84404d4f63ade3c8988a9ec0f5eaba7",
-                "reference": "d17e7b94e84404d4f63ade3c8988a9ec0f5eaba7",
+                "url": "https://api.github.com/repos/minicli/librarian-core/zipball/06447cdcedd5db50d6e4c780f16e33cc6ea7c6ca",
+                "reference": "06447cdcedd5db50d6e4c780f16e33cc6ea7c6ca",
                 "shasum": ""
             },
             "require": {
                 "erusev/parsedown-extra": "^0.8.1",
                 "ext-curl": "*",
                 "ext-json": "*",
-                "minicli/curly": "^0.1.2"
+                "minicli/curly": "^0.1.2",
+                "minicli/minicache": "^0.2.0"
             },
             "type": "library",
             "autoload": {
@@ -167,7 +168,7 @@
             ],
             "description": "Core Librarian Package",
             "homepage": "https://github.com/minicli/librarian-core",
-            "time": "2020-06-21T10:50:09+00:00"
+            "time": "2020-06-21T11:06:52+00:00"
         },
         {
             "name": "minicli/minicache",

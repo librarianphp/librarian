@@ -12,9 +12,7 @@
   "require": {
     "ext-json": "*",
     "minicli/miniweb": "^0.2.0",
-    "minicli/curly": "^0.1.2",
-    "minicli/librarian-core": "^0.2.0",
-    "minicli/minicache": "^0.2.0"
+    "minicli/librarian-core": "^0.2.1"
   },
   "scripts": {
     "post-install-cmd": [
