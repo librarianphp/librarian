@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a712bd4fafe5a1b8b586ef35ab92a323",
+    "content-hash": "9bc8b4748e804bbfd837a05ecfc2b428",
     "packages": [
         {
             "name": "erusev/parsedown",
@@ -137,21 +137,23 @@
         },
         {
             "name": "minicli/librarian-core",
-            "version": "0.1.2",
+            "version": "0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/minicli/librarian-core.git",
-                "reference": "a28927ae1e092a49f25d7a4aa56e9c7084f7f5f1"
+                "reference": "d17e7b94e84404d4f63ade3c8988a9ec0f5eaba7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/minicli/librarian-core/zipball/a28927ae1e092a49f25d7a4aa56e9c7084f7f5f1",
-                "reference": "a28927ae1e092a49f25d7a4aa56e9c7084f7f5f1",
+                "url": "https://api.github.com/repos/minicli/librarian-core/zipball/d17e7b94e84404d4f63ade3c8988a9ec0f5eaba7",
+                "reference": "d17e7b94e84404d4f63ade3c8988a9ec0f5eaba7",
                 "shasum": ""
             },
             "require": {
                 "erusev/parsedown-extra": "^0.8.1",
-                "ext-curl": "*"
+                "ext-curl": "*",
+                "ext-json": "*",
+                "minicli/curly": "^0.1.2"
             },
             "type": "library",
             "autoload": {
@@ -165,59 +167,102 @@
             ],
             "description": "Core Librarian Package",
             "homepage": "https://github.com/minicli/librarian-core",
-            "time": "2020-02-28T13:21:47+00:00"
+            "time": "2020-06-21T10:50:09+00:00"
         },
         {
-            "name": "minicli/minicli",
-            "version": "1.1.1",
+            "name": "minicli/minicache",
+            "version": "0.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/minicli/minicli.git",
-                "reference": "b476ae3c89c09c411f060b80a3582525e6a5a3bd"
+                "url": "https://github.com/minicli/minicache.git",
+                "reference": "637c2ea48448b4ce68cf8815b7693b95e907d4de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/minicli/minicli/zipball/b476ae3c89c09c411f060b80a3582525e6a5a3bd",
-                "reference": "b476ae3c89c09c411f060b80a3582525e6a5a3bd",
+                "url": "https://api.github.com/repos/minicli/minicache/zipball/637c2ea48448b4ce68cf8815b7693b95e907d4de",
+                "reference": "637c2ea48448b4ce68cf8815b7693b95e907d4de",
                 "shasum": ""
             },
             "require": {
-                "ext-readline": "*"
+                "ext-json": "*"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Minicli\\": "lib/"
+                    "Minicli\\Minicache\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
-            "description": "Mini CLI-only Experimental PHP Framework",
-            "homepage": "https://github.com/erikaheidi/minicli",
+            "description": "A simple json file cache for minicli",
+            "homepage": "https://github.com/minicli/minicli",
+            "keywords": [
+                "cache",
+                "json",
+                "micro"
+            ],
+            "time": "2020-05-21T09:03:53+00:00"
+        },
+        {
+            "name": "minicli/minicli",
+            "version": "2.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/minicli/minicli.git",
+                "reference": "0518a532c35765246b8ccc7582111aa9a2866d04"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/minicli/minicli/zipball/0518a532c35765246b8ccc7582111aa9a2866d04",
+                "reference": "0518a532c35765246b8ccc7582111aa9a2866d04",
+                "shasum": ""
+            },
+            "require": {
+                "ext-readline": "*",
+                "php": ">=7.3"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "pestphp/pest": "^0.1.2",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Minicli\\": "src/",
+                    "Assets\\": "tests/Assets"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Experimental micro CLI framework for PHP",
+            "homepage": "https://github.com/minicli/minicli",
             "keywords": [
                 "cli",
                 "command-line"
             ],
-            "time": "2019-12-20T14:59:27+00:00"
+            "time": "2020-06-13T09:04:06+00:00"
         },
         {
             "name": "minicli/miniweb",
-            "version": "0.1",
+            "version": "0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/minicli/miniweb.git",
-                "reference": "d254da59c6767fa3a603da8667216b32bcec20cb"
+                "reference": "0e3cb8f5496b3c1ce307db014448090426eb0604"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/minicli/miniweb/zipball/d254da59c6767fa3a603da8667216b32bcec20cb",
-                "reference": "d254da59c6767fa3a603da8667216b32bcec20cb",
+                "url": "https://api.github.com/repos/minicli/miniweb/zipball/0e3cb8f5496b3c1ce307db014448090426eb0604",
+                "reference": "0e3cb8f5496b3c1ce307db014448090426eb0604",
                 "shasum": ""
             },
             "require": {
-                "minicli/minicli": "^1.0",
+                "minicli/minicli": "^2.1",
                 "twig/twig": "^3.0"
             },
             "type": "library",
@@ -237,20 +282,20 @@
                 "sites",
                 "web"
             ],
-            "time": "2020-02-24T11:56:41+00:00"
+            "time": "2020-06-21T10:36:32+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.14.0",
+            "version": "v1.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "fbdeaec0df06cf3d51c93de80c7eb76e271f5a38"
+                "reference": "e94c8b1bbe2bc77507a1056cdb06451c75b427f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/fbdeaec0df06cf3d51c93de80c7eb76e271f5a38",
-                "reference": "fbdeaec0df06cf3d51c93de80c7eb76e271f5a38",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/e94c8b1bbe2bc77507a1056cdb06451c75b427f9",
+                "reference": "e94c8b1bbe2bc77507a1056cdb06451c75b427f9",
                 "shasum": ""
             },
             "require": {
@@ -262,7 +307,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.14-dev"
+                    "dev-master": "1.17-dev"
                 }
             },
             "autoload": {
@@ -295,20 +340,20 @@
                 "polyfill",
                 "portable"
             ],
-            "time": "2020-01-13T11:15:53+00:00"
+            "time": "2020-05-12T16:14:59+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.14.0",
+            "version": "v1.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "34094cfa9abe1f0f14f48f490772db7a775559f2"
+                "reference": "fa79b11539418b02fc5e1897267673ba2c19419c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/34094cfa9abe1f0f14f48f490772db7a775559f2",
-                "reference": "34094cfa9abe1f0f14f48f490772db7a775559f2",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/fa79b11539418b02fc5e1897267673ba2c19419c",
+                "reference": "fa79b11539418b02fc5e1897267673ba2c19419c",
                 "shasum": ""
             },
             "require": {
@@ -320,7 +365,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.14-dev"
+                    "dev-master": "1.17-dev"
                 }
             },
             "autoload": {
@@ -354,7 +399,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2020-01-13T11:15:53+00:00"
+            "time": "2020-05-12T16:47:27+00:00"
         },
         {
             "name": "twig/twig",
