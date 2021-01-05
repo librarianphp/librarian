@@ -1,8 +1,8 @@
 <?php
 
-//////////////////////////////////
-// minicli/librarian configuration
-//////////////////////////////////
+/**
+ * Librarian Main Configuration
+ */
 
 return [
 
@@ -22,17 +22,16 @@ return [
     'cache_path' => __DIR__ . '/var/cache',
 
     # Librarian site Info
-    'site_name' => 'Librarian',
-    'site_description' => 'Micro CMS for static content',
-    'site_root' => '/',
-    'site_about' => '_p/about',
+    'site_name' => getenv('SITE_NAME') ?: 'Librarian',
+    'site_description' => getenv('SITE_DESC') ?: 'Minimalist file-based CMS in PHP',
+    'site_root' => getenv('SITE_ROOT') ?: '/',
+    'site_about' => getenv('SITE_ABOUT') ?: '_p/about',
     'social_links' => [
-        'Twitter' => 'https://twitter.com/erikaheidi',
-        'Github'  => 'https://github.com/minicli/librarian',
+        'Twitter' => getenv('LINK_TWITTER') ?: 'https://twitter.com/erikaheidi',
+        'Github'  => getenv('LINK_GITHUB') ?: 'https://github.com/minicli/librarian',
     ],
 
     # Dev.to Settings
-    //'devto_username' => 'erikaheidi',
-    //'devto_datadir' =>  '_to',
-
+    'devto_username' => getenv('DEVTO_USER'),
+    'devto_datadir' =>  '_to',
 ];

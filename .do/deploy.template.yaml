@@ -22,7 +22,7 @@ spec:
     github:
       branch: main
       deploy_on_push: true
-      repo_clone_url: minicli/librarian
+      repo: minicli/librarian
     http_port: 8080
     instance_count: 1
     instance_size_slug: basic-xs
@@ -33,7 +33,7 @@ spec:
   - name: import devto
     kind: POST_DEPLOY
     github:
-      repo_clone_url: minicli/librarian
+      repo: minicli/librarian
       branch: main
       deploy_on_push: true
     run_command: php librarian import devto
