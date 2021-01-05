@@ -1,0 +1,49 @@
+name: librarian
+region: ams
+services:
+- environment_slug: php
+  run_command: heroku-php-apache2 public/
+  envs:
+  - key: SITE_NAME
+    value:  Librarian
+  - key: SITE_DESC
+    value: "Minimalist file-based CMS in PHP"
+  - key: SITE_ROOT
+    value: "/"
+  - key: SITE_ABOUT
+    value: "_p/about"
+  - key: LINK_TWITTER
+    value: "https://twitter.com/erikaheidi"
+  - key: LINK_GITHUB
+    value: "https://github.com/minicli/librarian"
+  github:
+    branch: main
+    deploy_on_push: true
+    repo: minicli/librarian
+  http_port: 8080
+  instance_count: 1
+  instance_size_slug: basic-xs
+  name: librarian
+  routes:
+  - path: /
+jobs:
+- name: import devto
+  kind: POST_DEPLOY
+  github:
+    repo: minicli/librarian
+    branch: main
+    deploy_on_push: true
+  run_command: php librarian import devto
+  envs:
+  - key: SITE_NAME
+    value:  Librarian
+  - key: SITE_DESC
+    value: "Minimalist file-based CMS in PHP"
+  - key: SITE_ROOT
+    value: "/"
+  - key: SITE_ABOUT
+    value: "_p/about"
+  - key: LINK_TWITTER
+    value: "https://twitter.com/erikaheidi"
+  - key: LINK_GITHUB
+    value: "https://github.com/minicli/librarian"

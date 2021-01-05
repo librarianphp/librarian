@@ -19,6 +19,11 @@ class DevToController extends CommandController
             exit;
         }
 
+        if ($this->getApp()->config->devto_username === null) {
+            $this->getPrinter()->error('ERROR: dev.to username not set. You must define a devto_username config variable.');
+            exit;
+        }
+
         $this->getPrinter()->info("Starting import... this might take a few minutes.");
 
         try {
