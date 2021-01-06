@@ -3,7 +3,7 @@ spec:
   region: ams
   services:
   - environment_slug: php
-    run_command: heroku-php-apache2 public/
+    run_command: heroku-php-apache2 web/
     envs:
     - key: SITE_NAME
       value:  Librarian
