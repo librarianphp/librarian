@@ -19,10 +19,9 @@ spec:
       value: "https://github.com/minicli/librarian"
     - key: DEVTO_USER
       value: erikaheidi
-    github:
+    git:
       branch: main
-      deploy_on_push: true
-      repo: minicli/librarian
+      repo_clone_url: https://github.com/minicli/librarian.git
     http_port: 8080
     instance_count: 1
     instance_size_slug: basic-xs
@@ -32,10 +31,9 @@ spec:
   jobs:
   - name: import devto
     kind: POST_DEPLOY
-    github:
-      repo: minicli/librarian
+    git:
       branch: main
-      deploy_on_push: true
+      repo_clone_url: https://github.com/minicli/librarian.git
     run_command: php librarian import devto
     envs:
     - key: SITE_NAME
