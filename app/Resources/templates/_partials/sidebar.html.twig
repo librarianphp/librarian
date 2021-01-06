@@ -1,25 +1,39 @@
-<aside class="col-md-4 blog-sidebar">
-    <div class="p-4 mb-3 mt-3 bg-light rounded">
-        <h4 class="font-italic">About</h4>
-        <p class="mb-0">{{ site_about() }}</p>
+<div class="column blog-sidebar">
+    <div class="box">
+        <div class="has-text-centered">
+            <figure class="image is-128x128 is-inline-block">
+                <img class="is-rounded" src="https://picsum.photos/seed/128/128">
+            </figure>
+        </div>
+
+        <p class="mb-0 has-text-justified">{{ site_about() }}</p>
     </div>
 
-    <div class="p-4">
-        <h4 class="font-italic">Get Social</h4>
-        <ol class="list-unstyled">
-            {% for title,link in social_links() %}
-                <li><a href="{{ link }}">{{ title }}</a></li>
-            {% endfor %}
-        </ol>
+    <div class="box">
+        <aside class="menu">
+            <p class="menu-label">
+                Topics
+            </p>
+            <ul class="menu-list">
+                {% for tag_name, posts in tag_list() %}
+                    <li><a href="/tag/{{ tag_name }}">{{ tag_name }}</a></li>
+                {% endfor %}
+            </ul>
+        </aside>
     </div>
 
-    <div class="p-4">
-        <h4 class="font-italic">Tag List</h4>
-        <ol class="list-unstyled mb-0">
-            {% for tag_name, posts in tag_list() %}
-                <li><a href="/tag/{{ tag_name }}">{{ tag_name }}</a></li>
-            {% endfor %}
-        </ol>
+    <div class="box p4">
+        <aside class="menu">
+            <p class="menu-label">
+                Social
+            </p>
+            <ul class="menu-list">
+                {% for title,link in social_links() %}
+                    <li><a href="{{ link }}" title="{{ title }}"><span class="icon"><i class="fab fa-{{ title|lower }}"></i></span> {{ title }}</a></li>
+                {% endfor %}
+            </ul>
+        </aside>
     </div>
 
-</aside><!-- /.blog-sidebar -->
+
+</div><!-- /.blog-sidebar -->

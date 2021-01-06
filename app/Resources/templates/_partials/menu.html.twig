@@ -1,7 +1,33 @@
-<div class="nav-scroller py-1 mb-2">
-    <nav class="nav d-flex justify-content-between">
-        {% for tag_name, posts in tag_list() %}
-            <a class="p-2 text-muted" href="/tag/{{ tag_name }}">{{ tag_name }}</a>
-        {% endfor %}
-    </nav>
+<div class="navbar-menu">
+    <div class="navbar-start">
+        <a class="navbar-item" href="{{ site_root() }}">
+            Home
+        </a>
+
+        <a class="navbar-item" href="{{ site_root() }}/_p/about">
+            About
+        </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+                More
+            </a>
+
+            <div class="navbar-dropdown">
+                <a class="navbar-item">
+                    Submenu Item 1
+                </a>
+                <a class="navbar-item">
+                    Submenu Item 2
+                </a>
+                <a class="navbar-item">
+                    Submenu Item 3
+                </a>
+                <hr class="navbar-divider">
+                <a class="navbar-item">
+                    Submenu Item 4
+                </a>
+            </div>
+        </div>
+    </div>
 </div>

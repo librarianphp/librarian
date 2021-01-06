@@ -4,12 +4,12 @@
     <title>{% block title %} {{ site_title() }} {% endblock %}</title>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{% block description %} {{ site_description() }} {% endblock %}">
-    <meta name="author" content="Erika Heidi">
+    <meta name="author" content="Librarian">
 
     {% block includes %}
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
 
         <style>
             .bd-placeholder-img {
@@ -28,67 +28,53 @@
             }
         </style>
         <!-- Custom styles for this template -->
-        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
-
         <link href="/css/default.css" rel="stylesheet">
-
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     {% endblock %}
 </head>
 
 <body>
-<div class="container">
-    <header class="blog-header py-3">
-        <div class="row flex-nowrap justify-content-between align-items-center">
-            <div class="col-4 pt-1">
-                <!--<a class="text-muted" href="#">Subscribe</a>-->
+
+<div class="container blog-header">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item blog-header-logo" href="{{ site_root() }}">{{ site_title() }}</a>
             </div>
-            <div class="col-4 text-center">
-                <a class="blog-header-logo text-dark" href="{{ site_root() }}">{{ site_title() }}</a>
-            </div>
-            <div class="col-4 d-flex justify-content-end align-items-center">
-                <!--
-                <a class="text-muted" href="#" aria-label="Search">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24" focusable="false"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg>
+
+            {#  {% include '_partials/menu.html.twig' %}#}
+
+            <div class="column has-text-right">
+                <a href="{{ site_root() }}" title="Home">
+                    <span class="icon is-medium"><i class="fas fas-lg fa-home"></i></span>
                 </a>
-                <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
-                -->
+
+                {% for title,link in social_links() %}
+                    <a href="{{ link }}" title="{{ title }}">
+                        <span class="icon">
+                            <i class="fab fa-{{ title|lower }}"></i>
+                        </span>
+                    </a>
+                {% endfor %}
             </div>
-        </div>
-    </header>
-
-
-    {% include '_partials/menu.html.twig' %}
+        </nav>
 
     {% block featured_content %}
-
     {% endblock %}
 </div>
 
-<main role="main" class="container">
-    <div class="row">
-        <div class="col-md-8 blog-main">
-
+<div class="container px-2">
+    <div class="columns">
+        <div class="column is-three-quarters pr-6">
             {% block content %}
             {% endblock %}
-
-
-            <!--TODO: nav
-            <nav class="blog-pagination">
-                <a class="btn btn-outline-primary" href="#">Older</a>
-                <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
-            </nav>-->
-
-        </div><!-- /.blog-main -->
+        </div>
 
         {% include '_partials/sidebar.html.twig' %}
-    </div><!-- /.row -->
+    </div>
 
-</main><!-- /.container -->
+</div>
 
 {% include '_partials/footer.html.twig' %}
+<script defer src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"></script>
 </body>
 
 </html>

@@ -1,10 +1,10 @@
 ---
-title: All About Me
+title: This Is My About Page
 published: true
-description: Hey there! I'm Librarian, a tiny static-based CMS created on top of minicli. I don't use a database, I don't have a control panel, or users. Everything is pulled from static content in my data dir, and I can also import content from multiple sources and save them into local markdown files.
+description: Hey there! I'm Librarian, a small file-based CMS created in PHP, on top of Minicli. I'm somewhere between a static site generator and a dynamic CMS, because I can have dynamic pages, but my content is stored in markdown files.
 ---
 
-Hey there! I'm Librarian, a tiny static-based CMS created on top of minicli. I don't use a database, I don't have a control panel, or users. Everything is pulled from static content in my data dir.
+Hey there! I'm Librarian, a small file-based CMS created in PHP, on top of Minicli. I don't use a database, I don't have a control panel, or users. Everything is pulled from static content in my data dir.
 
 I can be extended for dynamic content as well, and I can have dynamic content sources, but everything is stored into markdown files and json caches.
 

@@ -13,6 +13,7 @@
     "php": ">=7.3",
     "ext-json": "*",
     "ext-curl": "*",
+    "ext-xml": "*",
     "minicli/miniweb": "^0.2.0",
     "minicli/librarian-core": "^0.2.1"
   },
