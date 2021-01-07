@@ -3,7 +3,7 @@ spec:
   region: ams
   services:
   - environment_slug: php
-    run_command: heroku-php-nginx -C nginx.conf web/
+    run_command: heroku-php-apache2 public/ web/
     envs:
     - key: SITE_NAME
       value:  Librarian
@@ -12,7 +12,7 @@ spec:
     - key: SITE_DESC
       value: "Minimalist file-based CMS in PHP"
     - key: SITE_URL
-      value: ${BINDABLE_NAME}
+      value: ${APP_URL}
     - key: SITE_ROOT
       value: "/"
     - key: LINK_TWITTER
