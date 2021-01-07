@@ -7,18 +7,20 @@ spec:
     envs:
     - key: SITE_NAME
       value:  Librarian
+    - key: SITE_AUTHOR
+      value: librarian@example.com
     - key: SITE_DESC
       value: "Minimalist file-based CMS in PHP"
+    - key: SITE_URL
+      value: ${BINDABLE_NAME}
     - key: SITE_ROOT
       value: "/"
-    - key: SITE_ABOUT
-      value: "_p/about"
     - key: LINK_TWITTER
       value: "https://twitter.com/erikaheidi"
     - key: LINK_GITHUB
       value: "https://github.com/minicli/librarian"
     - key: DEVTO_USER
-      value: erikaheidi
+      value:
     git:
       branch: main
       repo_clone_url: https://github.com/minicli/librarian.git
