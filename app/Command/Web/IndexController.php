@@ -14,12 +14,24 @@ class IndexController extends WebController
         /** @var TwigServiceProvider $twig */
         $twig = $this->getApp()->twig;
 
-        /** @var ContentServiceProvider $static_provider */
+        $page = 1;
+        $limit = $this->getApp()->config->posts_per_page ?: 10;
+        $params = $this->getRequest()->getParams();
+
+        if (key_exists('page', $params)) {
+            $page = $params['page'];
+        }
+
+        $start = ($page * $limit) - $limit;
+
+        /** @var ContentServiceProvider $content_provider */
         $content_provider = $this->getApp()->content;
-        $content_list = $content_provider->fetchAll();
+        $content_list = $content_provider->fetchAll($start, $this->getApp()->config->posts_per_page);
 
         $output = $twig->render('content/index.html.twig', [
-            'content_list'  => $content_list
+            'content_list'  => $content_list,
+            'total_pages' => $content_provider->fetchTotalPages($limit),
+            'current_page' => $page
         ]);
 
         $response = new Response($output);

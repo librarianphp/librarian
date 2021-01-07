@@ -28,7 +28,10 @@ class TagController extends WebController
 
         $content_list = $content_provider->fetchFromTag($request->getSlug());
 
-        $output = $twig->render('content/listing.html.twig', ['content_list' => $content_list]);
+        $output = $twig->render('content/listing.html.twig', [
+            'content_list' => $content_list,
+            'tag_name' => $request->getSlug(),
+        ]);
 
         $response = new Response($output);
         $response->output();

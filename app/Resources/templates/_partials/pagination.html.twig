@@ -1,0 +1,7 @@
+<nav class="pagination is-centered" role="navigation" aria-label="pagination">
+    <ul class="pagination-list">
+        {% for i in 1..total_pages %}
+        <li><a class="pagination-link{% if current_page and current_page == i  %} is-current{% endif %}" aria-label="Go to page {{ i }}" href="{{ url }}?page={{ i }}">{{ loop.index }}</a></li>
+        {% endfor %}
+    </ul>
+</nav>

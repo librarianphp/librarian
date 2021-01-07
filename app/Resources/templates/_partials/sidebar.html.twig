@@ -29,7 +29,7 @@
             </p>
             <ul class="menu-list">
                 {% for title,link in social_links() %}
-                    <li><a href="{{ link }}" title="{{ title }}"><span class="icon"><i class="fab fa-{{ title|lower }}"></i></span> {{ title }}</a></li>
+                    {%  if link %}<li><a href="{{ link }}" title="{{ title }}"><span class="icon"><i class="fab fa-{{ title|lower }}"></i></span> {{ title }}</a></li>{% endif %}
                 {% endfor %}
             </ul>
         </aside>

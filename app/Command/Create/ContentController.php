@@ -20,7 +20,12 @@ class ContentController extends CommandController
             return;
         }
 
-        $template_name = $this->getArgs()[3];
+        $args = $this->getArgs();
+        $template_name = isset($args[3]) ? $args[3] : null;
+        if (!$template_name) {
+            $template_name = 'post';
+        }
+
         $stencil = new Stencil($this->getApp()->config->stencil_dir);
 
         $input = new Input(' ');

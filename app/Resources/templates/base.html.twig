@@ -10,23 +10,6 @@
 
     {% block includes %}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-
-        <style>
-            .bd-placeholder-img {
-                font-size: 1.125rem;
-                text-anchor: middle;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                -ms-user-select: none;
-                user-select: none;
-            }
-
-            @media (min-width: 768px) {
-                .bd-placeholder-img-lg {
-                    font-size: 3.5rem;
-                }
-            }
-        </style>
         <!-- Custom styles for this template -->
         <link href="/css/default.css" rel="stylesheet">
     {% endblock %}
@@ -48,11 +31,13 @@
                 </a>
 
                 {% for title,link in social_links() %}
-                    <a href="{{ link }}" title="{{ title }}">
-                        <span class="icon">
-                            <i class="fab fa-{{ title|lower }}"></i>
-                        </span>
-                    </a>
+                    {% if link %}
+                        <a href="{{ link }}" title="{{ title }}">
+                            <span class="icon">
+                                <i class="fab fa-{{ title|lower }}"></i>
+                            </span>
+                        </a>
+                    {% endif %}
                 {% endfor %}
             </div>
         </nav>
