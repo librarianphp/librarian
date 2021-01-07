@@ -15,7 +15,8 @@
     "ext-curl": "*",
     "ext-xml": "*",
     "minicli/miniweb": "^0.2.0",
-    "minicli/librarian-core": "^0.2.1"
+    "minicli/librarian-core": "^0.2.1",
+    "suin/php-rss-writer": "^1.6"
   },
   "scripts": {
     "post-install-cmd": [

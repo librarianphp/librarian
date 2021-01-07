@@ -10,7 +10,9 @@ return [
     # You should update this accordingly, and/or set up ENV vars with your preferred values.
     #########################################################################################
     'site_name' => getenv('SITE_NAME') ?: 'Librarian',
+    'site_author' => getenv('SITE_AUTHOR') ?: 'librarian@example.com',
     'site_description' => getenv('SITE_DESC') ?: 'Minimalist file-based CMS in PHP',
+    'site_url' => getenv('SITE_URL') ?: 'http://localhost:8000',
     'site_root' => getenv('SITE_ROOT') ?: '/',
     'site_about' => getenv('SITE_ABOUT') ?: '_p/about',
     'posts_per_page' => 10,
