@@ -46,7 +46,7 @@ class FeedController extends WebController
                 ->appendTo($channel);
         }
 
-        header('application/rss+xml');
+        header('Content-type: application/rss+xml');
         echo $feed;
     }
 }
