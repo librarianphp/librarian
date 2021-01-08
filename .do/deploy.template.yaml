@@ -7,18 +7,20 @@ spec:
     envs:
     - key: SITE_NAME
       value:  Librarian
+    - key: APP_DEBUG
+      value: "false"
     - key: SITE_AUTHOR
-      value: librarian@example.com
+      value: "librarian@example.com"
     - key: SITE_DESC
       value: "Minimalist file-based CMS in PHP"
     - key: SITE_URL
       value: ${APP_URL}
     - key: SITE_ROOT
       value: "/"
-    - key: LINK_TWITTER
-      value: "https://twitter.com/erikaheidi"
     - key: LINK_GITHUB
       value: "https://github.com/minicli/librarian"
+    - key: LINK_TWITTER
+      value:
     - key: DEVTO_USER
       value:
     git:
@@ -26,7 +28,7 @@ spec:
       repo_clone_url: https://github.com/minicli/librarian.git
     http_port: 8080
     instance_count: 1
-    instance_size_slug: basic-xs
+    instance_size_slug: basic-xxs
     name: librarian
     routes:
     - path: /

@@ -13,14 +13,22 @@ class DevToController extends CommandController
     {
         /** @var DevtoServiceProvider $devto */
         $devto = $this->getApp()->devto;
+        $app_debug = $this->getApp()->config->app_debug;
 
         if ($devto === null) {
-            $this->getPrinter()->error('ERROR: dev.to service not found. Perhaps you forgot to register it?');
+            if ($app_debug) {
+                $this->getPrinter()->error('ERROR: dev.to service not found. Perhaps you forgot to register it?');
+            }
             exit;
         }
 
-        if ($this->getApp()->config->devto_username === null) {
-            $this->getPrinter()->error('ERROR: dev.to username not set. You must define a devto_username config variable.');
+        if (!$this->getApp()->config->devto_username) {
+            if ($app_debug) {
+                $this->getPrinter()->error("ERROR: dev.to username not set.\n" .
+                "You must define a devto_username in your config file\n" .
+                "if you want to import posts from that platform."
+                );
+            }
             exit;
         }
 

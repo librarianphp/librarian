@@ -23,6 +23,7 @@ return [
         'LinkedIn' => getenv('LINK_LINKEDIN'),
         'Twitch' => getenv('LINK_TWITCH'),
     ],
+    'app_debug' => getenv('APP_DEBUG') ?: true,
 
     ##########################################################################################
     # Dev.to Settings

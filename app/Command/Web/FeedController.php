@@ -3,9 +3,7 @@
 namespace App\Command\Web;
 
 use Librarian\Content;
-use Minicli\Miniweb\Provider\TwigServiceProvider;
 use Minicli\Miniweb\WebController;
-use Minicli\Miniweb\Response;
 use Librarian\Provider\ContentServiceProvider;
 use Suin\RSSWriter\Channel;
 use Suin\RSSWriter\Feed;
@@ -24,8 +22,8 @@ class FeedController extends WebController
             ->feedUrl($this->getApp()->config->site_url . '/feed')
             ->language('en-US')
             ->copyright('Copyright ' . date('Y') . ', '. $this->getApp()->config->site_name )
-            //->pubDate(strtotime('Tue, 21 Aug 2012 19:50:37 +0900'))
-            //->lastBuildDate(strtotime('Tue, 21 Aug 2012 19:50:37 +0900'))
+            ->pubDate(strtotime(date('Y-m-d H:i:s')))
+            ->lastBuildDate(strtotime(date('Y-m-d H:i:s')))
             ->ttl(60)
             ->appendTo($feed);
 
@@ -48,6 +46,7 @@ class FeedController extends WebController
                 ->appendTo($channel);
         }
 
-        echo trim($feed);
+        header('application/rss+xml');
+        echo $feed;
     }
 }

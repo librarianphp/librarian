@@ -12,8 +12,10 @@
         {{ content.description|default('No description provided.') }}
         <p><a href="{{ site_root() }}{{ content.link }}">Read More...</a></p>
     {% endif %}
+</div>
 
-    {% if content.tag_list %}
+{% if content.tag_list %}
+    <div class="pb-6">
         <p><span class="icon is-medium"><i class="fas fas-lg fa-tags"></i></span>
             {% if content.getTagsAsArray() %}
                 {% for tag in content.getTagsAsArray() %}
@@ -23,5 +25,5 @@
                 <small>{{ content.tag_list }}</small>
             {% endif %}
         </p>
-    {% endif %}
-</div>
+    </div>
+{% endif %}

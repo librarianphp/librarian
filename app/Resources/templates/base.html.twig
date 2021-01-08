@@ -10,8 +10,12 @@
 
     {% block includes %}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+
+        <!-- code highlight -->
+        <link href="{{ site_root() }}css/prism.css" rel="stylesheet">
+
         <!-- Custom styles for this template -->
-        <link href="/css/default.css" rel="stylesheet">
+        <link href="{{ site_root() }}css/default.css" rel="stylesheet">
     {% endblock %}
 </head>
 
@@ -39,6 +43,10 @@
                         </a>
                     {% endif %}
                 {% endfor %}
+
+                <a href="{{ site_root() }}feed" title="RSS Feed">
+                    <span class="icon is-medium"><i class="fas fas-lg fa-rss"></i></span>
+                </a>
             </div>
         </nav>
 
@@ -60,6 +68,7 @@
 
 {% include '_partials/footer.html.twig' %}
 <script defer src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"></script>
+<script type="text/javascript" src="{{ site_root() }}js/prism.js"></script>
 </body>
 
 </html>
