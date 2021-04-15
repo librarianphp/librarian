@@ -1,3 +1,5 @@
 .idea
 config.php
 vendor/
+node_modules/
+web/css/app.css

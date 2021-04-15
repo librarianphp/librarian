@@ -201,12 +201,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/minicli/librarian-core.git",
-                "reference": "cdff9e657cf5c23fab5ed4252957874d560516ef"
+                "reference": "3788c8fdd52960f14810e6d7897c57ace3b78d59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/minicli/librarian-core/zipball/cdff9e657cf5c23fab5ed4252957874d560516ef",
-                "reference": "cdff9e657cf5c23fab5ed4252957874d560516ef",
+                "url": "https://api.github.com/repos/minicli/librarian-core/zipball/3788c8fdd52960f14810e6d7897c57ace3b78d59",
+                "reference": "3788c8fdd52960f14810e6d7897c57ace3b78d59",
                 "shasum": ""
             },
             "require": {
@@ -239,7 +239,7 @@
                 "issues": "https://github.com/minicli/librarian-core/issues",
                 "source": "https://github.com/minicli/librarian-core/tree/1.0"
             },
-            "time": "2021-04-15T08:11:12+00:00"
+            "time": "2021-04-15T13:08:35+00:00"
         },
         {
             "name": "minicli/minicache",
