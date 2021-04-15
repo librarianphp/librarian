@@ -2,10 +2,10 @@
 
 namespace App\Command\Web;
 
-use Minicli\Miniweb\Provider\TwigServiceProvider;
-use Minicli\Miniweb\Response;
+use Librarian\Provider\TwigServiceProvider;
+use Librarian\Response;
 use Librarian\Provider\ContentServiceProvider;
-use Minicli\Miniweb\WebController;
+use Librarian\WebController;
 
 class TagController extends WebController
 {

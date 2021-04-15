@@ -3,7 +3,7 @@
 namespace App\Command\Web;
 
 use Librarian\Content;
-use Minicli\Miniweb\WebController;
+use Librarian\WebController;
 use Librarian\Provider\ContentServiceProvider;
 use Suin\RSSWriter\Channel;
 use Suin\RSSWriter\Feed;

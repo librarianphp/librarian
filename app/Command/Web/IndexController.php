@@ -2,9 +2,9 @@
 
 namespace App\Command\Web;
 
-use Minicli\Miniweb\Provider\TwigServiceProvider;
-use Minicli\Miniweb\WebController;
-use Minicli\Miniweb\Response;
+use Librarian\Provider\TwigServiceProvider;
+use Librarian\WebController;
+use Librarian\Response;
 use Librarian\Provider\ContentServiceProvider;
 
 class IndexController extends WebController

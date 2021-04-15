@@ -3,13 +3,13 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 use Minicli\App;
-use Minicli\Miniweb\Provider\TwigServiceProvider;
-use Minicli\Miniweb\Provider\RouterServiceProvider;
-use Minicli\Miniweb\Exception\RouteNotFoundException;
+use Librarian\Provider\TwigServiceProvider;
+use Librarian\Provider\RouterServiceProvider;
+use Librarian\Exception\RouteNotFoundException;
 use Librarian\Provider\ContentServiceProvider;
 use Librarian\Provider\DevtoServiceProvider;
 use Librarian\Provider\LibrarianServiceProvider;
-use Minicli\Miniweb\Response;
+use Librarian\Response;
 
 $app = new App(require __DIR__ . '/../config.php');
 

@@ -2,10 +2,10 @@
 
 namespace App\Command\Web;
 
-use Minicli\Miniweb\Provider\TwigServiceProvider;
-use Minicli\Miniweb\Response;
+use Librarian\Provider\TwigServiceProvider;
+use Librarian\Response;
 use Librarian\Provider\ContentServiceProvider;
-use Minicli\Miniweb\WebController;
+use Librarian\WebController;
 
 /**
  * Class StaticController
@@ -32,7 +32,7 @@ class ContentController extends WebController
             $output = $twig->render('content/listing.html.twig', ['content_list' => $content_list]);
         } else {
 
-            $content = $content_provider->fetch($request);
+            $content = $content_provider->fetch($request->getRoute() . '/' . $request->getSlug());
 
             if ($content === null) {
                 Response::redirect('/notfound');

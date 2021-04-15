@@ -17,7 +17,7 @@ You can try me at DigitalOcean by clicking the following button:
 <a title="Deploy this application to DigitalOceans App Platform in a few clicks!" href="https://cloud.digitalocean.com/apps/new?repo=https://github.com/minicli/librarian/tree/main"><img src="https://mp-assets1.sfo2.digitaloceanspaces.com/deploy-to-do/do-btn-blue.svg" alt="Deploy to DO button"></a>
 </p>
 
-For a longer term installation, however, it's advisable that you fork this repository so that you're able to better customize your theme and other static files.
+For a longer term installation, however, you should fork this repository so that you're able to better customize your theme and other static files.
 ## About
 
 Librarian is a stateless CMS based on static files. It was built mainly for users who want to create a home for their dev.to posts, or for users who want to create and host their content using a similar format, without dealing with databases and authentication.

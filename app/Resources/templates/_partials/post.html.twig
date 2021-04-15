@@ -1,29 +1,27 @@
-<div class="content is-size-5 blog-post mb-6">
-    {% if content.cover_image %}
-        <img class="cover-image" src="{{ content.cover_image|raw }}" alt="cover image">
-    {% endif %}
+<div class="content is-size-5">
+    <div class="blog-post mb-6">
+        {% if content.frontMatterHas('cover_image') %}
+            <img class="cover-image" src="{{ content.frontMatterGet('cover_image')|raw }}" alt="cover image">
+        {% endif %}
 
-    <h1 class="blog-post-title"><a href="{{ site_root() }}{{ content.link }}">{{ content.title }}</a></h1>
-    <p class="blog-post-meta">{{ content.published }}</p>
+        <h1 class="blog-post-title"><a href="{{ site_root() }}{{ content.getLink() }}">{{ content.frontMatterGet('title') ?? content.title }}</a></h1>
+        <p class="blog-post-meta">{{ content.getDate() }}</p>
 
-    {% if full %}
-        {{ content.body_html|raw }}
-    {% else %}
-        {{ content.description|default('No description provided.') }}
-        <p><a href="{{ site_root() }}{{ content.link }}">Read More...</a></p>
+        {% if full %}
+            {{ content.body_html|raw }}
+        {% else %}
+            {{ content.frontMatterGet('description') ?? 'No description provided.' }}
+            <p><a href="{{ site_root() }}{{ content.getLink() }}">Read More...</a></p>
+        {% endif %}
+    </div>
+
+    {% if content.frontMatterHas('tags') %}
+        <div class="pb-6">
+            <p><span class="icon is-medium"><i class="fas fas-lg fa-tags"></i></span>
+            {% for tag in content.getAsArray('tags') %}
+                <span class="tag"><a href="{{ site_root() }}tag/{{ tag }}">{{ tag }}</a></span>
+            {% endfor %}
+            </p>
+        </div>
     {% endif %}
 </div>
-
-{% if content.tag_list %}
-    <div class="pb-6">
-        <p><span class="icon is-medium"><i class="fas fas-lg fa-tags"></i></span>
-            {% if content.getTagsAsArray() %}
-                {% for tag in content.getTagsAsArray() %}
-                    <span class="tag"><a href="{{ site_root() }}tag/{{ tag }}">{{ tag }}</a></span>
-                {% endfor %}
-            {% else %}
-                <small>{{ content.tag_list }}</small>
-            {% endif %}
-        </p>
-    </div>
-{% endif %}
