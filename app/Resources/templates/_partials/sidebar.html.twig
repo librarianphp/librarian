@@ -1,38 +1,29 @@
 <div class="column blog-sidebar">
-    <div class="box">
-        <div class="has-text-centered">
-            <figure class="image is-128x128 is-inline-block">
-                <img class="is-rounded" src="https://picsum.photos/seed/128/128">
-            </figure>
+    <div class="px-4 py-6 mb-6 bg-gray-50 mt-6 rounded-md shadow-lg">
+        <div class="text-center mx-auto">
+            <img class="mx-auto rounded-full" src="https://picsum.photos/seed/128/128">
+            <h3 class="text-2xl my-2">About</h3>
         </div>
 
-        <p class="mb-0 has-text-justified">{{ site_about() }}</p>
+        <p class="text-justify px-4 py-2">{{ site_about() }}</p>
     </div>
 
-    <div class="box">
-        <aside class="menu">
-            <p class="menu-label">
-                Topics
-            </p>
-            <ul class="menu-list">
+    <div class="px-4 py-6 mb-6 bg-gray-50 mt-10 rounded-md shadow-lg">
+        <h3 class="text-2xl mb-6">Topics</h3>
+            <ul class="divide-y divide-gray-200 px-2">
                 {% for tag_name, posts in tag_list() %}
-                    <li><a href="/tag/{{ tag_name }}">{{ tag_name }}</a></li>
+                    <li class="py-2 px-2 hover:bg-gray-200"><a href="/tag/{{ tag_name }}">{{ tag_name }}</a></li>
                 {% endfor %}
             </ul>
-        </aside>
     </div>
 
-    <div class="box p4">
-        <aside class="menu">
-            <p class="menu-label">
-                Social
-            </p>
+    <div class="px-4 py-6 mb-6 bg-gray-50 mt-10 rounded-md shadow-lg">
+        <h3 class="text-2xl mb-6">Links</h3>
             <ul class="menu-list">
                 {% for title,link in social_links() %}
                     {%  if link %}<li><a href="{{ link }}" title="{{ title }}"><span class="icon"><i class="fab fa-{{ title|lower }}"></i></span> {{ title }}</a></li>{% endif %}
                 {% endfor %}
             </ul>
-        </aside>
     </div>
 
 

@@ -5,5 +5,6 @@
     {% for post in content_list %}
         {% include '_partials/post.html.twig' with { 'content': post } %}
     {% endfor %}
+    {% include '_partials/pagination.html.twig' with { 'url': site_root() } %}
 {% endblock%}
 

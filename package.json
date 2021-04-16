@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "npm run development",
-    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/postcss-cli/bin/postcss --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "development": "./node_modules/postcss-cli/bin/postcss app/Resources/css/app.css -o web/css/app.css",
     "watch": "npm run development -- --watch",
     "watch-poll": "npm run watch -- --watch-poll",
     "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --disable-host-check --config=node_modules/laravel-mix/setup/webpack.config.js",
@@ -10,6 +10,7 @@
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.4.0",
     "autoprefixer": "^10.2.5",
     "postcss-import": "^14.0.1",
     "tailwind": "^4.0.0",

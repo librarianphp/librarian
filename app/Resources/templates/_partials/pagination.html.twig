@@ -1,7 +1,9 @@
-<nav class="pagination is-centered" role="navigation" aria-label="pagination">
-    <ul class="pagination-list">
+<div class="mt-10 flex flex-row py-4 float-right">
         {% for i in 1..total_pages %}
-        <li><a class="pagination-link{% if current_page and current_page == i  %} is-current{% endif %}" aria-label="Go to page {{ i }}" href="{{ url }}?page={{ i }}">{{ loop.index }}</a></li>
+        <div class="order-first">
+            <a class="rounded-sm py-4 px-6 m-1 {% if current_page and current_page == i  %}bg-blue-400{% else %}bg-gray-200{% endif %} hover:bg-blue-300" href="{{ url }}?page={{ i }}">
+                {{ loop.index }}
+            </a>
+        </div>
         {% endfor %}
-    </ul>
-</nav>
+</div>
