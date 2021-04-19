@@ -40,7 +40,7 @@ return [
     ###################################################
     'app_path' => __DIR__ . '/app/Command',
     'theme' => 'unicorn',
-    'templates_path' => __DIR__ . '/app/Resources/templates',
+    'templates_path' => __DIR__ . '/app/Resources/themes/default',
     'data_path' => __DIR__ . '/app/Resources/data',
     'cache_path' => __DIR__ . '/var/cache',
     'stencil_dir' => __DIR__ . '/app/Resources/stencil',
