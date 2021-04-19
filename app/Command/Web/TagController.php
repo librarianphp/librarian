@@ -35,7 +35,16 @@ class TagController extends WebController
         }
 
         $start = ($page * $limit) - $limit;
-        $content_list = $content_provider->fetchFromTag($request->getSlug(), $start, $limit);
+
+        try {
+            $content_list = $content_provider->fetchFromTag($request->getSlug(), $start, $limit);
+        } catch (\Exception $e) {
+            Response::redirect('/notfound');
+        }
+
+        if (!$content_list) {
+            Response::redirect('/notfound');
+        }
 
         $output = $twig->render('content/listing.html.twig', [
             'content_list' => $content_list,

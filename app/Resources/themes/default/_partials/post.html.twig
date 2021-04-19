@@ -22,7 +22,7 @@
         <div class="pb-6">
             <p><span class="icon is-medium"><i class="fas fas-lg fa-tags"></i></span>
             {% for tag in content.getAsArray('tags') %}
-                <span class="rounded-full bg-blue-100 px-3 py-2 hover:bg-blue-200"><a href="{{ site_root() }}tag/{{ tag }}">{{ tag }}</a></span>
+                <span class="rounded-full bg-gray-200 px-3 py-2 hover:bg-gray-400"><a href="{{ site_root() }}tag/{{ tag }}">{{ tag }}</a></span>
             {% endfor %}
             </p>
         </div>

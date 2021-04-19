@@ -28,17 +28,26 @@ class ContentController extends WebController
         $request = $this->getRequest();
 
         if (!$request->getSlug()) {
-            $content_list = $content_provider->fetchFrom($request->getRoute());
+            try {
+                $content_list = $content_provider->fetchFrom($request->getRoute());
+            } catch (\Exception $e) {
+                Response::redirect('/notfound');
+            }
+
             $output = $twig->render('content/listing.html.twig', ['content_list' => $content_list]);
         } else {
 
-            $content = $content_provider->fetch($request->getRoute() . '/' . $request->getSlug());
+            try {
+                $content = $content_provider->fetch($request->getRoute() . '/' . $request->getSlug());
+            } catch (\Exception $e) {
+                Response::redirect('/notfound');
+            }
 
             if ($content === null) {
                 Response::redirect('/notfound');
             }
 
-            $output = $twig->render('content/static.html.twig', ['content' => $content]);
+            $output = $twig->render('content/single.html.twig', ['content' => $content]);
         }
 
         $response = new Response($output);
