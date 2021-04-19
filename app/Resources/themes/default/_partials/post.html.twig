@@ -1,0 +1,30 @@
+<div class="mb-10 py-4 px-4">
+    {% if content.frontMatterHas('cover_image') %}
+        <a href="{{ site_root() }}{{ content.getLink() }}" title="Read the full article: {{ content.frontMatterGet('title') }}">
+            <img class="w-full rounded-md" src="{{ content.frontMatterGet('cover_image')|raw }}" alt="cover image">
+        </a>
+    {% endif %}
+
+    <h1 class="text-3xl lg:text-3xl my-4 text-gray-600 hover:text-blue-800">
+        <a href="{{ site_root() }}{{ content.getLink() }}" title="Read the full article: {{ content.frontMatterGet('title') }}">{{ content.frontMatterGet('title') ?? content.title }}</a>
+    </h1>
+    <p class="text-md text-gray-500 mb-4">{{ content.getDate() }}</p>
+    <article class="prose xl:prose-xl max-w-none mb-6">
+        {% if full %}
+            {{ content.body_html|raw }}
+        {% else %}
+            {{ content.frontMatterGet('description') ?? 'No description provided.' }}
+            <p class="mt-6"><a href="{{ site_root() }}{{ content.getLink() }}">Read More...</a></p>
+        {% endif %}
+    </article>
+
+    {% if content.frontMatterHas('tags') %}
+        <div class="pb-6">
+            <p><span class="icon is-medium"><i class="fas fas-lg fa-tags"></i></span>
+            {% for tag in content.getAsArray('tags') %}
+                <span class="rounded-full bg-gray-200 px-3 py-2 hover:bg-gray-400"><a href="{{ site_root() }}tag/{{ tag }}">{{ tag }}</a></span>
+            {% endfor %}
+            </p>
+        </div>
+    {% endif %}
+</div>

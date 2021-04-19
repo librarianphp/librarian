@@ -2,10 +2,10 @@
 
 namespace App\Command\Web;
 
-use Minicli\Miniweb\Provider\TwigServiceProvider;
-use Minicli\Miniweb\Response;
+use Librarian\Provider\TwigServiceProvider;
+use Librarian\Response;
 use Librarian\Provider\ContentServiceProvider;
-use Minicli\Miniweb\WebController;
+use Librarian\WebController;
 
 class TagController extends WebController
 {
@@ -26,11 +26,31 @@ class TagController extends WebController
             Response::redirect('/notfound');
         }
 
-        $content_list = $content_provider->fetchFromTag($request->getSlug());
+        $page = 1;
+        $limit = $this->getApp()->config->posts_per_page ?: 10;
+        $params = $this->getRequest()->getParams();
+
+        if (key_exists('page', $params)) {
+            $page = $params['page'];
+        }
+
+        $start = ($page * $limit) - $limit;
+
+        try {
+            $content_list = $content_provider->fetchFromTag($request->getSlug(), $start, $limit);
+        } catch (\Exception $e) {
+            Response::redirect('/notfound');
+        }
+
+        if (!$content_list) {
+            Response::redirect('/notfound');
+        }
 
         $output = $twig->render('content/listing.html.twig', [
             'content_list' => $content_list,
             'tag_name' => $request->getSlug(),
+            'total_pages' => $content_provider->fetchTagTotalPages($request->getSlug(), $limit),
+            'current_page' => $page
         ]);
 
         $response = new Response($output);

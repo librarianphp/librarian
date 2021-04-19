@@ -1,0 +1,6 @@
+@import "../../../node_modules/tailwindcss/base.css";
+@import "../../../node_modules/tailwindcss/components.css";
+@import "../../../node_modules/tailwindcss/utilities.css";
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import "custom.css";
+@import "prism.css";

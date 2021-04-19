@@ -8,28 +8,26 @@
     <meta name="description" content="{% block description %} {{ site_description() }} {% endblock %}">
     <meta name="author" content="Librarian">
 
+    <link href="{{ site_root() }}css/app.css" rel="stylesheet">
+
     {% block includes %}
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-
-        <!-- code highlight -->
-        <link href="{{ site_root() }}css/prism.css" rel="stylesheet">
-
-        <!-- Custom styles for this template -->
-        <link href="{{ site_root() }}css/default.css" rel="stylesheet">
     {% endblock %}
 </head>
 
-<body>
+<body class="bg-gray-100">
 
-<div class="container blog-header">
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a class="navbar-item blog-header-logo" href="{{ site_root() }}">{{ site_title() }}</a>
+<div class="text-center bg-gray-100 py-3 shadow-sm">
+    <div class="container mx-auto">
+        <div class="grid grid-cols-4 gap-6">
+            <div class="pb-2 text-left px-2">
+                <h1 class="header text-5xl"><a href="{{ site_root() }}">{{ site_title() }}</a></h1>
             </div>
 
-            {#  {% include '_partials/menu.html.twig' %}#}
+            <div class="col-span-2">
 
-            <div class="column has-text-right">
+            </div>
+
+            <div class="text-right">
                 <a href="{{ site_root() }}" title="Home">
                     <span class="icon is-medium"><i class="fas fas-lg fa-home"></i></span>
                 </a>
@@ -48,25 +46,25 @@
                     <span class="icon is-medium"><i class="fas fas-lg fa-rss"></i></span>
                 </a>
             </div>
-        </nav>
-
-    {% block featured_content %}
-    {% endblock %}
+        </div>
+    </div>
 </div>
 
-<div class="container px-2">
-    <div class="columns">
-        <div class="column is-three-quarters pr-6">
+<div class="container mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        <div class="lg:col-span-3 px-6 py-6 bg-gray-50 mt-6 rounded-md shadow-lg">
             {% block content %}
             {% endblock %}
         </div>
 
+        <div>
         {% include '_partials/sidebar.html.twig' %}
+        </div>
     </div>
-
 </div>
 
 {% include '_partials/footer.html.twig' %}
+
 <script defer src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"></script>
 <script type="text/javascript" src="{{ site_root() }}js/prism.js"></script>
 </body>

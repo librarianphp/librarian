@@ -1,0 +1,30 @@
+<div class="column blog-sidebar">
+    <div class="px-4 py-6 mb-6 bg-gray-50 mt-6 rounded-md shadow-lg">
+        <div class="text-center mx-auto">
+            <img class="mx-auto rounded-full" src="https://picsum.photos/seed/128/128">
+            <h3 class="text-2xl my-2">About</h3>
+        </div>
+
+        <p class="text-justify px-4 py-2">{{ site_about() }}</p>
+    </div>
+
+    <div class="px-4 py-6 mb-6 bg-gray-50 mt-10 rounded-md shadow-lg">
+        <h3 class="text-2xl mb-6">Topics</h3>
+            <ul class="divide-y divide-gray-200 px-2">
+                {% for tag_name, posts in tag_list() %}
+                    <li class="py-2 px-2 hover:bg-gray-200"><a href="/tag/{{ tag_name }}">{{ tag_name }}</a></li>
+                {% endfor %}
+            </ul>
+    </div>
+
+    <div class="px-4 py-6 mb-6 bg-gray-50 mt-10 rounded-md shadow-lg">
+        <h3 class="text-2xl mb-6">Links</h3>
+            <ul class="menu-list">
+                {% for title,link in social_links() %}
+                    {%  if link %}<li><a href="{{ link }}" title="{{ title }}"><span class="icon"><i class="fab fa-{{ title|lower }}"></i></span> {{ title }}</a></li>{% endif %}
+                {% endfor %}
+            </ul>
+    </div>
+
+
+</div><!-- /.blog-sidebar -->

@@ -2,9 +2,9 @@
 
 namespace App\Command\Web;
 
-use Minicli\Miniweb\Provider\TwigServiceProvider;
-use Minicli\Miniweb\WebController;
-use Minicli\Miniweb\Response;
+use Librarian\Provider\TwigServiceProvider;
+use Librarian\WebController;
+use Librarian\Response;
 use Librarian\Provider\ContentServiceProvider;
 
 class IndexController extends WebController
@@ -28,7 +28,7 @@ class IndexController extends WebController
         $content_provider = $this->getApp()->content;
         $content_list = $content_provider->fetchAll($start, $this->getApp()->config->posts_per_page);
 
-        $output = $twig->render('content/index.html.twig', [
+        $output = $twig->render('content/listing.html.twig', [
             'content_list'  => $content_list,
             'total_pages' => $content_provider->fetchTotalPages($limit),
             'current_page' => $page

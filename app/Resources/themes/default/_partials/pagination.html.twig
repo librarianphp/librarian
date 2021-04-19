@@ -1,0 +1,9 @@
+<div class="mt-10 flex flex-row py-4 float-right">
+        {% for i in 1..total_pages %}
+        <div class="order-first">
+            <a class="rounded-sm py-4 px-6 m-1 {% if current_page and current_page == i  %}bg-gray-400{% else %}bg-gray-200{% endif %} hover:bg-gray-300" href="{{ url }}?page={{ i }}">
+                {{ loop.index }}
+            </a>
+        </div>
+        {% endfor %}
+</div>

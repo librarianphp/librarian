@@ -14,13 +14,15 @@
     "ext-json": "*",
     "ext-curl": "*",
     "ext-xml": "*",
-    "minicli/miniweb": "^0.2.0",
-    "minicli/librarian-core": "^0.2.1",
+    "minicli/librarian-core": "1.0.x-dev",
     "suin/php-rss-writer": "^1.6"
   },
   "scripts": {
     "post-install-cmd": [
       "@php -r \"file_exists('config.php') || copy('config_sample.php', 'config.php');\""
     ]
+  },
+  "require-dev": {
+    "pestphp/pest": "^1.0"
   }
 }
