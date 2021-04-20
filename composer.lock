@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0adbe4e79d01ed368eb839209780d1df",
+    "content-hash": "7420efda5229f2b4a53540e03cb4a67c",
     "packages": [
         {
             "name": "erikaheidi/parsed",
@@ -156,6 +156,58 @@
             "time": "2019-12-30T23:20:37+00:00"
         },
         {
+            "name": "librarianphp/librarian-core",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/librarianphp/librarian-core.git",
+                "reference": "769a2d47a643888479d50b3b163ba7a99db2eddc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/librarianphp/librarian-core/zipball/769a2d47a643888479d50b3b163ba7a99db2eddc",
+                "reference": "769a2d47a643888479d50b3b163ba7a99db2eddc",
+                "shasum": ""
+            },
+            "require": {
+                "erikaheidi/parsed": "^0.2.0",
+                "erusev/parsedown-extra": "^0.8.1",
+                "ext-curl": "*",
+                "ext-json": "*",
+                "minicli/curly": "^0.1.2",
+                "minicli/minicache": "^0.2.0",
+                "minicli/minicli": "^2.2",
+                "twig/twig": "^3.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.18",
+                "pestphp/pest": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Librarian\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Core Librarian Package",
+            "homepage": "https://github.com/librarianphp/librarian-core",
+            "support": {
+                "issues": "https://github.com/librarianphp/librarian-core/issues",
+                "source": "https://github.com/librarianphp/librarian-core/tree/1.0.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/erikaheidi",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-04-20T10:48:12+00:00"
+        },
+        {
             "name": "minicli/curly",
             "version": "0.1.2",
             "source": {
@@ -194,52 +246,6 @@
                 "source": "https://github.com/minicli/curly/tree/master"
             },
             "time": "2020-02-24T10:33:43+00:00"
-        },
-        {
-            "name": "minicli/librarian-core",
-            "version": "1.0.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/minicli/librarian-core.git",
-                "reference": "3788c8fdd52960f14810e6d7897c57ace3b78d59"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/minicli/librarian-core/zipball/3788c8fdd52960f14810e6d7897c57ace3b78d59",
-                "reference": "3788c8fdd52960f14810e6d7897c57ace3b78d59",
-                "shasum": ""
-            },
-            "require": {
-                "erikaheidi/parsed": "^0.2.0",
-                "erusev/parsedown-extra": "^0.8.1",
-                "ext-curl": "*",
-                "ext-json": "*",
-                "minicli/curly": "^0.1.2",
-                "minicli/minicache": "^0.2.0",
-                "minicli/minicli": "^2.2",
-                "twig/twig": "^3.0"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.18",
-                "pestphp/pest": "^1.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Librarian\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Core Librarian Package",
-            "homepage": "https://github.com/minicli/librarian-core",
-            "support": {
-                "issues": "https://github.com/minicli/librarian-core/issues",
-                "source": "https://github.com/minicli/librarian-core/tree/1.0"
-            },
-            "time": "2021-04-15T13:08:35+00:00"
         },
         {
             "name": "minicli/minicache",
@@ -3667,21 +3673,21 @@
         },
         {
             "name": "symfony/service-contracts",
-            "version": "v2.2.0",
+            "version": "v2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/service-contracts.git",
-                "reference": "d15da7ba4957ffb8f1747218be9e1a121fd298a1"
+                "reference": "f040a30e04b57fbcc9c6cbcf4dbaa96bd318b9bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/d15da7ba4957ffb8f1747218be9e1a121fd298a1",
-                "reference": "d15da7ba4957ffb8f1747218be9e1a121fd298a1",
+                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/f040a30e04b57fbcc9c6cbcf4dbaa96bd318b9bb",
+                "reference": "f040a30e04b57fbcc9c6cbcf4dbaa96bd318b9bb",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.2.5",
-                "psr/container": "^1.0"
+                "psr/container": "^1.1"
             },
             "suggest": {
                 "symfony/service-implementation": ""
@@ -3689,7 +3695,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.2-dev"
+                    "dev-main": "2.4-dev"
                 },
                 "thanks": {
                     "name": "symfony/contracts",
@@ -3726,7 +3732,7 @@
                 "standards"
             ],
             "support": {
-                "source": "https://github.com/symfony/service-contracts/tree/master"
+                "source": "https://github.com/symfony/service-contracts/tree/v2.4.0"
             },
             "funding": [
                 {
@@ -3742,7 +3748,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-09-07T11:33:47+00:00"
+            "time": "2021-04-01T10:43:52+00:00"
         },
         {
             "name": "symfony/string",
@@ -3938,9 +3944,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "minicli/librarian-core": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

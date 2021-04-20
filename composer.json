@@ -14,7 +14,7 @@
     "ext-json": "*",
     "ext-curl": "*",
     "ext-xml": "*",
-    "librarianphp/librarian-core": "1.0.x-dev",
+    "librarianphp/librarian-core": "^1.0",
     "suin/php-rss-writer": "^1.6"
   },
   "scripts": {
