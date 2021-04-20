@@ -43,7 +43,7 @@ It facilitates contributing via GitHub, so it's great for documentation in gener
 PHP (command-line) and Composer are required to bootstrap a new Librarian project.
 
 ```command
-composer create-project minicli/librarian myblog
+composer create-project librarianphp/librarian myblog
 ```
 
 Once the dependencies are installed, you can run Librarian with the built-in PHP server:
