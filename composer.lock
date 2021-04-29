@@ -258,16 +258,16 @@
         },
         {
             "name": "librarianphp/librarian-core",
-            "version": "1.0.11",
+            "version": "1.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/librarianphp/librarian-core.git",
-                "reference": "0b025a6724b220a0af221b3c450c22222203c8e7"
+                "reference": "c003c5c36ca1aff9eb2ffdd12b5c66beee5be56b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/librarianphp/librarian-core/zipball/0b025a6724b220a0af221b3c450c22222203c8e7",
-                "reference": "0b025a6724b220a0af221b3c450c22222203c8e7",
+                "url": "https://api.github.com/repos/librarianphp/librarian-core/zipball/c003c5c36ca1aff9eb2ffdd12b5c66beee5be56b",
+                "reference": "c003c5c36ca1aff9eb2ffdd12b5c66beee5be56b",
                 "shasum": ""
             },
             "require": {
@@ -298,7 +298,7 @@
             "homepage": "https://github.com/librarianphp/librarian-core",
             "support": {
                 "issues": "https://github.com/librarianphp/librarian-core/issues",
-                "source": "https://github.com/librarianphp/librarian-core/tree/1.0.11"
+                "source": "https://github.com/librarianphp/librarian-core/tree/1.0.12"
             },
             "funding": [
                 {
@@ -306,7 +306,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-04-29T10:13:02+00:00"
+            "time": "2021-04-29T10:47:15+00:00"
         },
         {
             "name": "minicli/curly",
