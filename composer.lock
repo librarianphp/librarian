@@ -8,22 +8,22 @@
     "packages": [
         {
             "name": "erikaheidi/parsed",
-            "version": "0.2.0",
+            "version": "0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/erikaheidi/parsed.git",
-                "reference": "da765c54cc3bf96fab915f181fa954afd0e3eac0"
+                "reference": "cfee42d11758d9bda6e2e9d5197c4223eb68925d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/erikaheidi/parsed/zipball/da765c54cc3bf96fab915f181fa954afd0e3eac0",
-                "reference": "da765c54cc3bf96fab915f181fa954afd0e3eac0",
+                "url": "https://api.github.com/repos/erikaheidi/parsed/zipball/cfee42d11758d9bda6e2e9d5197c4223eb68925d",
+                "reference": "cfee42d11758d9bda6e2e9d5197c4223eb68925d",
                 "shasum": ""
             },
             "require": {
-                "erusev/parsedown-extra": "^0.8.1",
                 "ext-curl": "*",
                 "ext-json": "*",
+                "league/commonmark": "^1.5",
                 "minicli/curly": "^0.1.2"
             },
             "require-dev": {
@@ -44,7 +44,7 @@
             "homepage": "https://github.com/erikaheidi/parsed",
             "support": {
                 "issues": "https://github.com/erikaheidi/parsed/issues",
-                "source": "https://github.com/erikaheidi/parsed/tree/0.2.0"
+                "source": "https://github.com/erikaheidi/parsed/tree/0.3.0"
             },
             "funding": [
                 {
@@ -52,7 +52,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-04-13T08:33:43+00:00"
+            "time": "2021-04-29T10:03:10+00:00"
         },
         {
             "name": "erusev/parsedown",
@@ -156,21 +156,122 @@
             "time": "2019-12-30T23:20:37+00:00"
         },
         {
-            "name": "librarianphp/librarian-core",
-            "version": "1.0.9",
+            "name": "league/commonmark",
+            "version": "1.5.8",
             "source": {
                 "type": "git",
-                "url": "https://github.com/librarianphp/librarian-core.git",
-                "reference": "2986f8a1032019bc783af2d504e7bd546057c784"
+                "url": "https://github.com/thephpleague/commonmark.git",
+                "reference": "08fa59b8e4e34ea8a773d55139ae9ac0e0aecbaf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/librarianphp/librarian-core/zipball/2986f8a1032019bc783af2d504e7bd546057c784",
-                "reference": "2986f8a1032019bc783af2d504e7bd546057c784",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/08fa59b8e4e34ea8a773d55139ae9ac0e0aecbaf",
+                "reference": "08fa59b8e4e34ea8a773d55139ae9ac0e0aecbaf",
                 "shasum": ""
             },
             "require": {
-                "erikaheidi/parsed": "^0.2.0",
+                "ext-mbstring": "*",
+                "php": "^7.1 || ^8.0"
+            },
+            "conflict": {
+                "scrutinizer/ocular": "1.7.*"
+            },
+            "require-dev": {
+                "cebe/markdown": "~1.0",
+                "commonmark/commonmark.js": "0.29.2",
+                "erusev/parsedown": "~1.0",
+                "ext-json": "*",
+                "github/gfm": "0.29.0",
+                "michelf/php-markdown": "~1.4",
+                "mikehaertl/php-shellcommand": "^1.4",
+                "phpstan/phpstan": "^0.12",
+                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.2",
+                "scrutinizer/ocular": "^1.5",
+                "symfony/finder": "^4.2"
+            },
+            "bin": [
+                "bin/commonmark"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "League\\CommonMark\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Colin O'Dell",
+                    "email": "colinodell@gmail.com",
+                    "homepage": "https://www.colinodell.com",
+                    "role": "Lead Developer"
+                }
+            ],
+            "description": "Highly-extensible PHP Markdown parser which fully supports the CommonMark spec and Github-Flavored Markdown (GFM)",
+            "homepage": "https://commonmark.thephpleague.com",
+            "keywords": [
+                "commonmark",
+                "flavored",
+                "gfm",
+                "github",
+                "github-flavored",
+                "markdown",
+                "md",
+                "parser"
+            ],
+            "support": {
+                "docs": "https://commonmark.thephpleague.com/",
+                "issues": "https://github.com/thephpleague/commonmark/issues",
+                "rss": "https://github.com/thephpleague/commonmark/releases.atom",
+                "source": "https://github.com/thephpleague/commonmark"
+            },
+            "funding": [
+                {
+                    "url": "https://enjoy.gitstore.app/repositories/thephpleague/commonmark",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.colinodell.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.paypal.me/colinpodell/10.00",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/colinodell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/colinodell",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/league/commonmark",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-03-28T18:51:39+00:00"
+        },
+        {
+            "name": "librarianphp/librarian-core",
+            "version": "1.0.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/librarianphp/librarian-core.git",
+                "reference": "0b025a6724b220a0af221b3c450c22222203c8e7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/librarianphp/librarian-core/zipball/0b025a6724b220a0af221b3c450c22222203c8e7",
+                "reference": "0b025a6724b220a0af221b3c450c22222203c8e7",
+                "shasum": ""
+            },
+            "require": {
+                "erikaheidi/parsed": "^0.3.0",
                 "erusev/parsedown-extra": "^0.8.1",
                 "ext-curl": "*",
                 "ext-json": "*",
@@ -197,7 +298,7 @@
             "homepage": "https://github.com/librarianphp/librarian-core",
             "support": {
                 "issues": "https://github.com/librarianphp/librarian-core/issues",
-                "source": "https://github.com/librarianphp/librarian-core/tree/1.0.9"
+                "source": "https://github.com/librarianphp/librarian-core/tree/1.0.11"
             },
             "funding": [
                 {
@@ -205,7 +306,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-04-23T16:38:27+00:00"
+            "time": "2021-04-29T10:13:02+00:00"
         },
         {
             "name": "minicli/curly",
@@ -753,16 +854,16 @@
         },
         {
             "name": "filp/whoops",
-            "version": "2.12.0",
+            "version": "2.12.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "d501fd2658d55491a2295ff600ae5978eaad7403"
+                "reference": "c13c0be93cff50f88bbd70827d993026821914dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/d501fd2658d55491a2295ff600ae5978eaad7403",
-                "reference": "d501fd2658d55491a2295ff600ae5978eaad7403",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/c13c0be93cff50f88bbd70827d993026821914dd",
+                "reference": "c13c0be93cff50f88bbd70827d993026821914dd",
                 "shasum": ""
             },
             "require": {
@@ -812,7 +913,7 @@
             ],
             "support": {
                 "issues": "https://github.com/filp/whoops/issues",
-                "source": "https://github.com/filp/whoops/tree/2.12.0"
+                "source": "https://github.com/filp/whoops/tree/2.12.1"
             },
             "funding": [
                 {
@@ -820,7 +921,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-03-30T12:00:00+00:00"
+            "time": "2021-04-25T12:00:00+00:00"
         },
         {
             "name": "myclabs/deep-copy",
