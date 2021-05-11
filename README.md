@@ -26,3 +26,7 @@ Librarian **is not** a static site generator, and the idea is to provide a mix o
 The official documentation is available at https://librarianphp.dev. It is by no means complete, more content will be added as soon as possible.
 You can [contribute to Librarian's documentation via GitHub](https://github.com/librarianphp/librarian-docs).
 
+## Projects Using Librarian
+
+- [sponsoropensource.dev](https://sponsoropensource.dev) - A list of underrepresented open source creators that can be sponsored via GitHub Sponsors.
+- [Librarian Documentation](https://librarianphp.dev) - The official Librarian documentation, built with Librarian.
