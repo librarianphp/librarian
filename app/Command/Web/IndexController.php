@@ -3,6 +3,7 @@
 namespace App\Command\Web;
 
 use Librarian\Provider\TwigServiceProvider;
+use Librarian\Request;
 use Librarian\WebController;
 use Librarian\Response;
 use Librarian\Provider\ContentServiceProvider;
@@ -13,10 +14,25 @@ class IndexController extends WebController
     {
         /** @var TwigServiceProvider $twig */
         $twig = $this->getApp()->twig;
+        /** @var ContentServiceProvider $content_provider */
+        $content_provider = $this->getApp()->content;
+        $request = $this->getRequest();
+
+        if ($this->getApp()->config->site_index !== null) {
+            $content = $content_provider->fetch($this->getApp()->config->site_index);
+            if ($content) {
+                $response = new Response($twig->render('content/single.html.twig', [
+                    'content' => $content
+                ]));
+
+                $response->output();
+                return 0;
+            }
+        }
 
         $page = 1;
         $limit = $this->getApp()->config->posts_per_page ?: 10;
-        $params = $this->getRequest()->getParams();
+        $params = $request->getParams();
 
         if (key_exists('page', $params)) {
             $page = $params['page'];
@@ -24,8 +40,6 @@ class IndexController extends WebController
 
         $start = ($page * $limit) - $limit;
 
-        /** @var ContentServiceProvider $content_provider */
-        $content_provider = $this->getApp()->content;
         $content_list = $content_provider->fetchAll($start, $this->getApp()->config->posts_per_page);
 
         $output = $twig->render('content/listing.html.twig', [
@@ -37,5 +51,6 @@ class IndexController extends WebController
         $response = new Response($output);
 
         $response->output();
+        return 0;
     }
 }

@@ -27,30 +27,43 @@ class ContentController extends WebController
 
         $request = $this->getRequest();
 
-        if (!$request->getSlug()) {
-            try {
-                $content_list = $content_provider->fetchFrom($request->getRoute());
-            } catch (\Exception $e) {
-                Response::redirect('/notfound');
-            }
-
-            $output = $twig->render('content/listing.html.twig', ['content_list' => $content_list]);
-        } else {
-
-            try {
-                $content = $content_provider->fetch($request->getRoute() . '/' . $request->getSlug());
-            } catch (\Exception $e) {
-                Response::redirect('/notfound');
-            }
+        try {
+            $content = $content_provider->fetch($request->getRoute() . '/' . $request->getSlug());
 
             if ($content === null) {
-                Response::redirect('/notfound');
-            }
 
-            $output = $twig->render('content/single.html.twig', ['content' => $content]);
+                $page = 1;
+                $limit = $this->getApp()->config->posts_per_page ?: 10;
+                $params = $this->getRequest()->getParams();
+
+                if (key_exists('page', $params)) {
+                    $page = $params['page'];
+                }
+
+                $start = ($page * $limit) - $limit;
+
+                $content_list = $content_provider->fetchFrom($request->getRoute(), $start, $this->getApp()->config->posts_per_page);
+                $response = new Response($twig->render('content/listing.html.twig', [
+                    'content_list' => $content_list,
+                    'total_pages' => $content_provider->fetchTotalPages($limit),
+                    'current_page' => $page,
+                    'base_url' => $request->getRoute()
+                ]));
+
+                $response->output();
+                return 0;
+            }
+        } catch (\Exception $e) {
+            Response::redirect('/notfound');
         }
+
+        $output = $twig->render('content/single.html.twig', [
+            'content' => $content
+        ]);
+
 
         $response = new Response($output);
         $response->output();
+        return 0;
     }
 }

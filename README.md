@@ -1,53 +1,28 @@
 # Librarian
-_This is an experimental project._
+Librarian is a stateless CMS based on static files. It uses the same format as DEV.to for markdown files with a front matter and liquid tags for custom functionality.
+The front matter is fluid and doesn't have a fixed spec, meaning you can include any custom fields you want and fetch them from your templates.
 
-Librarian is a stateless CMS based on static files. It was built mainly for users who want to create a home for their dev.to posts, or for users who want to create and host their content using a similar format, without dealing with databases and authentication.
+![Librarian default index page screenshot](https://librarianphp.dev/img/librarian_default_page.png)
 
-* No database
-* No sessions
-* No users
+Librarian doesn't use databases, sessions, or users. Administration is made from the command-line.
+For multiple authors, author information must be defined as metadata within the front matter.
 
-Librarian supports content written in Markdown with an optional front-matter section for metadata, which can be accessed from anywhere in the templates. This allows for great flexibility when customizing templates and content types.
+This is an **experimental** project built to keep content decoupled from the application itself, while keeping a very low footprint and functioning as a middle ground between static sites and dynamic CMSs.
 
 Liquid tags supported at the moment:
 
-* Twitter (embeds a Tweet)
-* YouTube (embeds YouTube video)
-* GitHub (embeds Gist or Tree File)
+| Tag | Example | Description |
+|-----|---------|-------------|
+| `youtube` | `{% audio path_to_mp3.mp3 %}` | embeds mp3 audio |
+| `video` | `{% video path_to_mp4.mp4 %}` | embeds mp4 video |
+| `tweet_id` | `{% twitter tweet_id %}` | embeds a Tweet |
+| `youtube` | `{% youtube video_ID %}` | embeds a YouTube video |
+| `github` | `{% github file_url %}` | embeds File from Github (Gists aren't supported at the moment) |
 
 Librarian **is not** a static site generator, and the idea is to provide a mix of static files and dynamic capabilities that don't require sessions or databases.
-It facilitates contributing via GitHub, so it's great for documentation in general.
 
-## Installation
+## Documentation
 
-PHP (command-line) and Composer are required to bootstrap a new Librarian project.
-
-```shell
-composer create-project librarianphp/librarian myblog
-```
-
-Once the dependencies are installed, you can run Librarian with the built-in PHP server:
-
-```shell
-cd myblog
-php -S 0.0.0.0:8000 -t web/
-```
-
-Then you can access the app from your browser at `http://localhost:8000`.
-
-To import DEV posts, first edit the `config.php` file to include your own DEV username, then run:
-
-```shell
-php librarian import:devto
-```
-
-To customize the views, you'll need to be able to compile CSS assets and that requires `npm` running at least on your development machine. Otherwise you won't have access to all the Tailwind has to offer!
-
-To compile the CSS assets, run:
-
-```shell
-npm run dev
-```
-
-More documentation coming.
+The official documentation is available at https://librarianphp.dev. It is by no means complete, more content will be added as soon as possible.
+You can [contribute to Librarian's documentation via GitHub](https://github.com/librarianphp/librarian-docs).
 
