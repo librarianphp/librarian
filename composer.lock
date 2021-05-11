@@ -7,166 +7,17 @@
     "content-hash": "7420efda5229f2b4a53540e03cb4a67c",
     "packages": [
         {
-            "name": "erikaheidi/parsed",
-            "version": "0.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/erikaheidi/parsed.git",
-                "reference": "cfee42d11758d9bda6e2e9d5197c4223eb68925d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/erikaheidi/parsed/zipball/cfee42d11758d9bda6e2e9d5197c4223eb68925d",
-                "reference": "cfee42d11758d9bda6e2e9d5197c4223eb68925d",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "ext-json": "*",
-                "league/commonmark": "^1.5",
-                "minicli/curly": "^0.1.2"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.18",
-                "pestphp/pest": "^1.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Parsed\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "A generic content parser that supports the devto markdown format",
-            "homepage": "https://github.com/erikaheidi/parsed",
-            "support": {
-                "issues": "https://github.com/erikaheidi/parsed/issues",
-                "source": "https://github.com/erikaheidi/parsed/tree/0.3.0"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/erikaheidi",
-                    "type": "github"
-                }
-            ],
-            "time": "2021-04-29T10:03:10+00:00"
-        },
-        {
-            "name": "erusev/parsedown",
-            "version": "1.7.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/erusev/parsedown.git",
-                "reference": "cb17b6477dfff935958ba01325f2e8a2bfa6dab3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/erusev/parsedown/zipball/cb17b6477dfff935958ba01325f2e8a2bfa6dab3",
-                "reference": "cb17b6477dfff935958ba01325f2e8a2bfa6dab3",
-                "shasum": ""
-            },
-            "require": {
-                "ext-mbstring": "*",
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8.35"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Parsedown": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Emanuil Rusev",
-                    "email": "hello@erusev.com",
-                    "homepage": "http://erusev.com"
-                }
-            ],
-            "description": "Parser for Markdown.",
-            "homepage": "http://parsedown.org",
-            "keywords": [
-                "markdown",
-                "parser"
-            ],
-            "support": {
-                "issues": "https://github.com/erusev/parsedown/issues",
-                "source": "https://github.com/erusev/parsedown/tree/1.7.x"
-            },
-            "time": "2019-12-30T22:54:17+00:00"
-        },
-        {
-            "name": "erusev/parsedown-extra",
-            "version": "0.8.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/erusev/parsedown-extra.git",
-                "reference": "91ac3ff98f0cea243bdccc688df43810f044dcef"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/erusev/parsedown-extra/zipball/91ac3ff98f0cea243bdccc688df43810f044dcef",
-                "reference": "91ac3ff98f0cea243bdccc688df43810f044dcef",
-                "shasum": ""
-            },
-            "require": {
-                "erusev/parsedown": "^1.7.4"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8.35"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "ParsedownExtra": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Emanuil Rusev",
-                    "email": "hello@erusev.com",
-                    "homepage": "http://erusev.com"
-                }
-            ],
-            "description": "An extension of Parsedown that adds support for Markdown Extra.",
-            "homepage": "https://github.com/erusev/parsedown-extra",
-            "keywords": [
-                "markdown",
-                "markdown extra",
-                "parsedown",
-                "parser"
-            ],
-            "support": {
-                "issues": "https://github.com/erusev/parsedown-extra/issues",
-                "source": "https://github.com/erusev/parsedown-extra/tree/0.8.x"
-            },
-            "time": "2019-12-30T23:20:37+00:00"
-        },
-        {
             "name": "league/commonmark",
-            "version": "1.5.8",
+            "version": "1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "08fa59b8e4e34ea8a773d55139ae9ac0e0aecbaf"
+                "reference": "2651c497f005de305c7ba3f232cbd87b8c00ee8c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/08fa59b8e4e34ea8a773d55139ae9ac0e0aecbaf",
-                "reference": "08fa59b8e4e34ea8a773d55139ae9ac0e0aecbaf",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/2651c497f005de305c7ba3f232cbd87b8c00ee8c",
+                "reference": "2651c497f005de305c7ba3f232cbd87b8c00ee8c",
                 "shasum": ""
             },
             "require": {
@@ -254,27 +105,26 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-03-28T18:51:39+00:00"
+            "time": "2021-05-08T16:08:00+00:00"
         },
         {
             "name": "librarianphp/librarian-core",
-            "version": "1.0.12",
+            "version": "1.0.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/librarianphp/librarian-core.git",
-                "reference": "c003c5c36ca1aff9eb2ffdd12b5c66beee5be56b"
+                "reference": "734be4fff53ac12c6c9650e9240f8f6ed6f5d9de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/librarianphp/librarian-core/zipball/c003c5c36ca1aff9eb2ffdd12b5c66beee5be56b",
-                "reference": "c003c5c36ca1aff9eb2ffdd12b5c66beee5be56b",
+                "url": "https://api.github.com/repos/librarianphp/librarian-core/zipball/734be4fff53ac12c6c9650e9240f8f6ed6f5d9de",
+                "reference": "734be4fff53ac12c6c9650e9240f8f6ed6f5d9de",
                 "shasum": ""
             },
             "require": {
-                "erikaheidi/parsed": "^0.3.0",
-                "erusev/parsedown-extra": "^0.8.1",
                 "ext-curl": "*",
                 "ext-json": "*",
+                "librarianphp/parsed": "^0.3.0",
                 "minicli/curly": "^0.1.2",
                 "minicli/minicache": "^0.2.0",
                 "minicli/minicli": "^2.2",
@@ -298,7 +148,7 @@
             "homepage": "https://github.com/librarianphp/librarian-core",
             "support": {
                 "issues": "https://github.com/librarianphp/librarian-core/issues",
-                "source": "https://github.com/librarianphp/librarian-core/tree/1.0.12"
+                "source": "https://github.com/librarianphp/librarian-core/tree/1.0.14"
             },
             "funding": [
                 {
@@ -306,7 +156,55 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-04-29T10:47:15+00:00"
+            "time": "2021-05-10T12:13:22+00:00"
+        },
+        {
+            "name": "librarianphp/parsed",
+            "version": "0.3.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/librarianphp/parsed.git",
+                "reference": "591fa7c2c9f6e07e11e26395b28b4bff692cb13d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/librarianphp/parsed/zipball/591fa7c2c9f6e07e11e26395b28b4bff692cb13d",
+                "reference": "591fa7c2c9f6e07e11e26395b28b4bff692cb13d",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "league/commonmark": "^1.5",
+                "minicli/curly": "^0.1.2"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.18",
+                "pestphp/pest": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Parsed\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A generic content parser that supports the devto markdown format",
+            "homepage": "https://github.com/librarianphp/parsed",
+            "support": {
+                "issues": "https://github.com/librarianphp/parsed/issues",
+                "source": "https://github.com/librarianphp/parsed/tree/0.3.4"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/erikaheidi",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-05-10T11:56:54+00:00"
         },
         {
             "name": "minicli/curly",
@@ -390,16 +288,16 @@
         },
         {
             "name": "minicli/minicli",
-            "version": "2.2.0",
+            "version": "2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/minicli/minicli.git",
-                "reference": "6ba44bf3d27cb062a499a0d0d4368e13db17837a"
+                "reference": "b359a740b7dc258acaf52d4373cac5f545705b33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/minicli/minicli/zipball/6ba44bf3d27cb062a499a0d0d4368e13db17837a",
-                "reference": "6ba44bf3d27cb062a499a0d0d4368e13db17837a",
+                "url": "https://api.github.com/repos/minicli/minicli/zipball/b359a740b7dc258acaf52d4373cac5f545705b33",
+                "reference": "b359a740b7dc258acaf52d4373cac5f545705b33",
                 "shasum": ""
             },
             "require": {
@@ -430,7 +328,7 @@
             ],
             "support": {
                 "issues": "https://github.com/minicli/minicli/issues",
-                "source": "https://github.com/minicli/minicli/tree/2.2.0"
+                "source": "https://github.com/minicli/minicli/tree/2.2.1"
             },
             "funding": [
                 {
@@ -438,7 +336,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-03-04T16:39:23+00:00"
+            "time": "2021-05-08T15:36:01+00:00"
         },
         {
             "name": "suin/php-rss-writer",
@@ -983,16 +881,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.10.4",
+            "version": "v4.10.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "c6d052fc58cb876152f89f532b95a8d7907e7f0e"
+                "reference": "4432ba399e47c66624bc73c8c0f811e5c109576f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/c6d052fc58cb876152f89f532b95a8d7907e7f0e",
-                "reference": "c6d052fc58cb876152f89f532b95a8d7907e7f0e",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/4432ba399e47c66624bc73c8c0f811e5c109576f",
+                "reference": "4432ba399e47c66624bc73c8c0f811e5c109576f",
                 "shasum": ""
             },
             "require": {
@@ -1033,9 +931,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v4.10.4"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v4.10.5"
             },
-            "time": "2020-12-20T10:01:03+00:00"
+            "time": "2021-05-03T19:11:20+00:00"
         },
         {
             "name": "nunomaduro/collision",
@@ -1127,16 +1025,16 @@
         },
         {
             "name": "pestphp/pest",
-            "version": "v1.0.5",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pestphp/pest.git",
-                "reference": "6616b6299bd9f01f9d5390c03c82df3ba30413fb"
+                "reference": "c6a2e3b4d0eb129ad8eab2d6c8603a5e6c68f12b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pestphp/pest/zipball/6616b6299bd9f01f9d5390c03c82df3ba30413fb",
-                "reference": "6616b6299bd9f01f9d5390c03c82df3ba30413fb",
+                "url": "https://api.github.com/repos/pestphp/pest/zipball/c6a2e3b4d0eb129ad8eab2d6c8603a5e6c68f12b",
+                "reference": "c6a2e3b4d0eb129ad8eab2d6c8603a5e6c68f12b",
                 "shasum": ""
             },
             "require": {
@@ -1204,7 +1102,7 @@
             ],
             "support": {
                 "issues": "https://github.com/pestphp/pest/issues",
-                "source": "https://github.com/pestphp/pest/tree/v1.0.5"
+                "source": "https://github.com/pestphp/pest/tree/v1.1.0"
             },
             "funding": [
                 {
@@ -1232,7 +1130,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2021-03-31T15:00:01+00:00"
+            "time": "2021-05-02T22:41:59+00:00"
         },
         {
             "name": "pestphp/pest-plugin",
@@ -2336,16 +2234,16 @@
         },
         {
             "name": "psr/log",
-            "version": "1.1.3",
+            "version": "1.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "0f73288fd15629204f9d42b7055f72dacbe811fc"
+                "reference": "d49695b909c3b7628b6289db5479a1c204601f11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/0f73288fd15629204f9d42b7055f72dacbe811fc",
-                "reference": "0f73288fd15629204f9d42b7055f72dacbe811fc",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/d49695b909c3b7628b6289db5479a1c204601f11",
+                "reference": "d49695b909c3b7628b6289db5479a1c204601f11",
                 "shasum": ""
             },
             "require": {
@@ -2369,7 +2267,7 @@
             "authors": [
                 {
                     "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
+                    "homepage": "https://www.php-fig.org/"
                 }
             ],
             "description": "Common interface for logging libraries",
@@ -2380,9 +2278,9 @@
                 "psr-3"
             ],
             "support": {
-                "source": "https://github.com/php-fig/log/tree/1.1.3"
+                "source": "https://github.com/php-fig/log/tree/1.1.4"
             },
-            "time": "2020-03-23T09:12:05+00:00"
+            "time": "2021-05-03T11:20:27+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -3350,16 +3248,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v5.2.6",
+            "version": "v5.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "35f039df40a3b335ebf310f244cb242b3a83ac8d"
+                "reference": "90374b8ed059325b49a29b55b3f8bb4062c87629"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/35f039df40a3b335ebf310f244cb242b3a83ac8d",
-                "reference": "35f039df40a3b335ebf310f244cb242b3a83ac8d",
+                "url": "https://api.github.com/repos/symfony/console/zipball/90374b8ed059325b49a29b55b3f8bb4062c87629",
+                "reference": "90374b8ed059325b49a29b55b3f8bb4062c87629",
                 "shasum": ""
             },
             "require": {
@@ -3427,7 +3325,7 @@
                 "terminal"
             ],
             "support": {
-                "source": "https://github.com/symfony/console/tree/v5.2.6"
+                "source": "https://github.com/symfony/console/tree/v5.2.7"
             },
             "funding": [
                 {
@@ -3443,7 +3341,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-03-28T09:42:18+00:00"
+            "time": "2021-04-19T14:07:32+00:00"
         },
         {
             "name": "symfony/polyfill-intl-grapheme",
