@@ -6,7 +6,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{% block description %} {{ site_description() }} {% endblock %}">
-    <meta name="author" content="Librarian">
+    {% block meta %}
+        <meta name="author" content="{{ config('site_author') }}">
+        <meta property="og:title" content="{{ site_title() }}">
+        <meta property="og:description" content="{{ site_description() }}">
+        <meta property="og:site_name" content="{{ site_title() }}">
+        <meta property="og:type" content="article">
+        <meta property="og:image" content="{{ site_url() }}/img/default_cover_image.png">
+        <meta property="og:image:url" content="{{ site_url() }}/img/default_cover_image.png">
+        <meta property="og:image:alt" content="{{ site_title() }}">
+        <meta property="og:url" content="{{ site_url() }}">
+
+        <meta name="twitter:site" content="{{ site_url() }}">
+        <meta name="twitter:title" content="{{ site_title() }}">
+        <meta name="twitter:description" content="{{ site_description() }}">
+        <meta name="twitter:creator" content="{{ config('site_author') }}">
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="{{ site_url() }}"/>
+        <meta name="twitter:image" content="{{ site_url() }}/img/default_cover_image.png">
+        <meta name="twitter:image:alt" content="{{ site_title() }}">
+    {% endblock %}
 
     <link href="{{ site_root() }}css/app.css" rel="stylesheet">
 

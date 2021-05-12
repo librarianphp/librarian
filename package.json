@@ -5,9 +5,8 @@
     "development": "./node_modules/postcss-cli/bin/postcss app/Resources/css/app.css -o web/css/app.css",
     "watch": "npm run development -- --watch",
     "watch-poll": "npm run watch -- --watch-poll",
-    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --disable-host-check --config=node_modules/laravel-mix/setup/webpack.config.js",
     "prod": "npm run production",
-    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "production": "./node_modules/postcss-cli/bin/postcss app/Resources/css/app.css -o web/css/app.css"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.4.0",
@@ -20,5 +19,5 @@
     "postcss": "^8.2.14",
     "postcss-cli": "^8.3.1"
   },
-  "homepage": "https://github.com/minicli/librarian#readme"
+  "homepage": "https://librarianphp.dev"
 }

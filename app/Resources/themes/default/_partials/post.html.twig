@@ -6,7 +6,7 @@
     {% endif %}
 
     <h1 class="text-3xl lg:text-3xl my-4 text-gray-600 hover:text-blue-800">
-        <a href="{{ site_root() }}{{ content.getLink() }}" title="Read the full article: {{ content.frontMatterGet('title') }}">{{ content.frontMatterGet('title') ?? content.title }}</a>
+        <a href="{{ site_url() }}/{{ content.getLink() }}" title="Read the full article: {{ content.frontMatterGet('title') }}">{{ content.frontMatterGet('title') ?? content.title }}</a>
     </h1>
     <p class="text-md text-gray-500 mb-4">{{ content.getDate() }}</p>
     <article class="prose xl:prose-xl max-w-none mb-6">
@@ -14,7 +14,7 @@
             {{ content.body_html|raw }}
         {% else %}
             {{ content.frontMatterGet('description') ?? 'No description provided.' }}
-            <p class="mt-6"><a href="{{ site_root() }}{{ content.getLink() }}">Read More...</a></p>
+            <p class="mt-6"><a href="{{ site_url() }}/{{ content.getLink() }}">Read More...</a></p>
         {% endif %}
     </article>
 

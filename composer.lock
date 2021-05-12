@@ -109,16 +109,16 @@
         },
         {
             "name": "librarianphp/librarian-core",
-            "version": "1.0.14",
+            "version": "1.0.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/librarianphp/librarian-core.git",
-                "reference": "734be4fff53ac12c6c9650e9240f8f6ed6f5d9de"
+                "reference": "860f536638756f6b8e4ed9fa7f6c4c6f5a245e13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/librarianphp/librarian-core/zipball/734be4fff53ac12c6c9650e9240f8f6ed6f5d9de",
-                "reference": "734be4fff53ac12c6c9650e9240f8f6ed6f5d9de",
+                "url": "https://api.github.com/repos/librarianphp/librarian-core/zipball/860f536638756f6b8e4ed9fa7f6c4c6f5a245e13",
+                "reference": "860f536638756f6b8e4ed9fa7f6c4c6f5a245e13",
                 "shasum": ""
             },
             "require": {
@@ -148,7 +148,7 @@
             "homepage": "https://github.com/librarianphp/librarian-core",
             "support": {
                 "issues": "https://github.com/librarianphp/librarian-core/issues",
-                "source": "https://github.com/librarianphp/librarian-core/tree/1.0.14"
+                "source": "https://github.com/librarianphp/librarian-core/tree/1.0.16"
             },
             "funding": [
                 {
@@ -156,7 +156,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-05-10T12:13:22+00:00"
+            "time": "2021-05-12T10:19:09+00:00"
         },
         {
             "name": "librarianphp/parsed",
@@ -552,16 +552,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v3.3.0",
+            "version": "v3.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "1f3b7e2c06cc05d42936a8ad508ff1db7975cdc5"
+                "reference": "ac44433c49892bf28d47c852b19832f3823bd351"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/1f3b7e2c06cc05d42936a8ad508ff1db7975cdc5",
-                "reference": "1f3b7e2c06cc05d42936a8ad508ff1db7975cdc5",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/ac44433c49892bf28d47c852b19832f3823bd351",
+                "reference": "ac44433c49892bf28d47c852b19832f3823bd351",
                 "shasum": ""
             },
             "require": {
@@ -612,7 +612,7 @@
             ],
             "support": {
                 "issues": "https://github.com/twigphp/Twig/issues",
-                "source": "https://github.com/twigphp/Twig/tree/v3.3.0"
+                "source": "https://github.com/twigphp/Twig/tree/v3.3.1"
             },
             "funding": [
                 {
@@ -624,7 +624,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-02-08T09:54:36+00:00"
+            "time": "2021-05-12T08:05:35+00:00"
         }
     ],
     "packages-dev": [
@@ -1354,16 +1354,16 @@
         },
         {
             "name": "pestphp/pest-plugin-init",
-            "version": "v1.0.0",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pestphp/pest-plugin-init.git",
-                "reference": "bd6fdb058ba5dc7a9f7f3645ad4e0bdc34cf0026"
+                "reference": "cb3dfa1a9887aafb3d0b4db0fb8f6171ce69b49e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pestphp/pest-plugin-init/zipball/bd6fdb058ba5dc7a9f7f3645ad4e0bdc34cf0026",
-                "reference": "bd6fdb058ba5dc7a9f7f3645ad4e0bdc34cf0026",
+                "url": "https://api.github.com/repos/pestphp/pest-plugin-init/zipball/cb3dfa1a9887aafb3d0b4db0fb8f6171ce69b49e",
+                "reference": "cb3dfa1a9887aafb3d0b4db0fb8f6171ce69b49e",
                 "shasum": ""
             },
             "require": {
@@ -1409,7 +1409,7 @@
                 "unit"
             ],
             "support": {
-                "source": "https://github.com/pestphp/pest-plugin-init/tree/v1.0.0"
+                "source": "https://github.com/pestphp/pest-plugin-init/tree/v1.1.0"
             },
             "funding": [
                 {
@@ -1425,7 +1425,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2021-01-03T15:47:48+00:00"
+            "time": "2021-05-10T16:31:00+00:00"
         },
         {
             "name": "phar-io/manifest",

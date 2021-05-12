@@ -12,7 +12,18 @@ use Librarian\Provider\ContentServiceProvider;
 use Librarian\Provider\DevtoServiceProvider;
 
 $app = new App(require __DIR__ . '/config.php');
-$app->setSignature('Run "librarian help" for commands help.');
+$app->setSignature('
+ _      ____  ____   ____    ____  ____   ____   ____  ____  
+| |    |    ||    \ |    \  /    ||    \ |    | /    ||    \ 
+| |     |  | |  o  )|  D  )|  o  ||  D  ) |  | |  o  ||  _  |
+| |___  |  | |     ||    / |     ||    /  |  | |     ||  |  |
+|     | |  | |  O  ||    \ |  _  ||    \  |  | |  _  ||  |  |
+|     | |  | |     ||  .  \|  |  ||  .  \ |  | |  |  ||  |  |
+|_____||____||_____||__|\_||__|__||__|\_||____||__|__||__|__|
+
+Type "./librarian help" for help with available commands.
+');
+
 $app->addService('content', new ContentServiceProvider());
 $app->addService('devto', new DevtoServiceProvider());
 

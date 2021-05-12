@@ -1,7 +1,24 @@
 {% extends 'base.html.twig' %}
 
-{% block featured_content %}
+{% block meta %}
+    <meta name="author" content="{{ content.frontMatterGet('author') ?? config('site_author') }}">
+    <meta property="og:title" content="{{ content.frontMatterGet('title') }}">
+    <meta property="og:description" content="{{ content.frontMatterGet('description') }}">
+    <meta property="og:site_name" content="{{ site_title() }}">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="{% if content.frontMatterGet('cover_image') %}{{ content.frontMatterGet('cover_image') }}{% else %}{{ site_url() }}/img/default_cover_image.png'{% endif %}">
+    <meta property="og:image:url" content="{% if content.frontMatterGet('cover_image') %}{{ content.frontMatterGet('cover_image') }}{% else %}{{ site_url() }}/img/default_cover_image.png'{% endif %}">
+    <meta property="og:image:alt" content="{{ content.frontMatterGet('title') }} - {{ site_title() }}">
+    <meta property="og:url" content="{{ site_url() }}/{{ content.getLink() }}">
 
+    <meta name="twitter:site" content="{{ site_url() }}">
+    <meta name="twitter:title" content="{{ content.frontMatterGet('title') }}">
+    <meta name="twitter:description" content="{{ content.frontMatterGet('description') }}">
+    <meta name="twitter:creator" content="{{ content.frontMatterGet('author') ?? config('site_author') }}">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="{{ site_url() }}/{{ content.getLink() }}"/>
+    <meta name="twitter:image" content="{% if content.frontMatterGet('cover_image') %}{{ content.frontMatterGet('cover_image') }}{% else %}{{ site_url() }}/img/default_cover_image.png'{% endif %}">
+    <meta name="twitter:image:alt" content="{{ content.frontMatterGet('title') }} - {{ site_title() }}">
 {% endblock %}
 
 {% block content %}

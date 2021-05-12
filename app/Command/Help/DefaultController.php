@@ -2,6 +2,7 @@
 
 namespace App\Command\Help;
 
+use League\CommonMark\Block\Element\Paragraph;
 use Minicli\App;
 use Minicli\Command\CommandController;
 use Minicli\Command\CommandRegistry;
@@ -19,25 +20,28 @@ class DefaultController extends CommandController
     
     public function handle()
     {
-        $this->getPrinter()->info('Available Commands');
+        $this->getPrinter()->info($this->app->getSignature());
+
+        $print_table[] = [ 'Namespace', 'Command' ];
 
         foreach ($this->command_map as $command => $sub) {
-
-            $this->getPrinter()->newline();
-            $this->getPrinter()->out($command, 'info_alt');
-
+            if ($command == 'web') {
+                continue;
+            }
+            $print_table[] = [ $command, ''];
             if (is_array($sub)) {
                 foreach ($sub as $subcommand) {
-                    if ($subcommand !== 'default') {
-                        $this->getPrinter()->newline();
-                        $this->getPrinter()->out(sprintf('%s%s','└──', $subcommand));
+                    if ($subcommand == 'default') {
+                        $row = "./librarian $command\n";
+                    } else {
+                        $row = "./librarian $command $subcommand\n";
                     }
+
+                    $print_table[] = [ '', $row ];
                 }
             }
-            $this->getPrinter()->newline();
         }
 
-        $this->getPrinter()->newline();
-        $this->getPrinter()->newline();
+        $this->getPrinter()->printTable($print_table);
     }
 }
