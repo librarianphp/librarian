@@ -13,9 +13,9 @@ Liquid tags supported at the moment:
 
 | Tag | Example | Description |
 |-----|---------|-------------|
-| `youtube` | `{% audio path_to_mp3.mp3 %}` | embeds mp3 audio |
+| `audio` | `{% audio path_to_mp3.mp3 %}` | embeds mp3 audio |
 | `video` | `{% video path_to_mp4.mp4 %}` | embeds mp4 video |
-| `tweet_id` | `{% twitter tweet_id %}` | embeds a Tweet |
+| `twitter` | `{% twitter tweet_id %}` | embeds a Tweet |
 | `youtube` | `{% youtube video_ID %}` | embeds a YouTube video |
 | `github` | `{% github file_url %}` | embeds File from Github (Gists aren't supported at the moment) |
 
