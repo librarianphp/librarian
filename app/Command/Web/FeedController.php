@@ -35,9 +35,9 @@ class FeedController extends WebController
         foreach ($content_list as $content) {
             $item = new Item();
             $item
-                ->title($content->title)
-                ->description('<div>'.$content->description.'</div>')
-                ->contentEncoded('<div>'.$content->description.'</div>')
+                ->title($content->title ?? '')
+                ->description('<div>'.($content->description ?? '').'</div>')
+                ->contentEncoded('<div>'.($content->description ?? '').'</div>')
                 ->url($this->getApp()->config->site_url . '/' . $content->getLink())
                 ->author($this->getApp()->config->site_author)
                 ->pubDate(strtotime($content->getDate()))
