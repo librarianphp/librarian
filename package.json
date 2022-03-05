@@ -10,13 +10,13 @@
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.4.1",
-    "autoprefixer": "^10.4.0",
+    "autoprefixer": "^10.4.2",
     "postcss-import": "^14.0.2",
     "tailwind": "^4.0.0",
     "tailwindcss": "^2.2.19"
   },
   "devDependencies": {
-    "postcss": "^8.3.11",
+    "postcss": "^8.4.7",
     "postcss-cli": "^8.3.1"
   },
   "homepage": "https://librarianphp.dev"
