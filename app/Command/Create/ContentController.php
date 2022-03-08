@@ -8,7 +8,7 @@ use Minicli\Input;
 
 class ContentController extends CommandController
 {
-    public function handle()
+    public function handle(): void
     {
         if (!$this->getApp()->config->has('stencil_dir')) {
             $this->getApp()->getPrinter()->error("You must define a stencil_dir config option.");

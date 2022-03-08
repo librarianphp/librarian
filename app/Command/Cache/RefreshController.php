@@ -9,7 +9,7 @@ use Minicli\Config;
 
 class RefreshController extends CommandController
 {
-    public function handle()
+    public function handle(): void
     {
         /** @var ContentServiceProvider $content_provider */
         $content_provider = $this->getApp()->content;

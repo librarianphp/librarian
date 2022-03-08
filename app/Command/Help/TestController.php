@@ -6,7 +6,7 @@ use Minicli\Command\CommandController;
 
 class TestController extends CommandController
 {
-    public function handle()
+    public function handle(): void
     {
         $name = $this->hasParam('user') ? $this->getParam('user') : 'World';
         $this->getPrinter()->display(sprintf("Hello, %s!", $name));

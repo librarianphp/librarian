@@ -7,7 +7,7 @@ use Minicli\Config;
 
 class ClearController extends CommandController
 {
-    public function handle()
+    public function handle(): void
     {
         /** @var Config $config */
         $config = $this->getApp()->config;

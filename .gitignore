@@ -3,3 +3,6 @@ config.php
 vendor/
 node_modules/
 .phpunit.result.cache
+Dockerfile
+docker-compose/
+docker-compose.yml

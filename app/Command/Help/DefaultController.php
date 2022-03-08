@@ -2,7 +2,6 @@
 
 namespace App\Command\Help;
 
-use League\CommonMark\Block\Element\Paragraph;
 use Minicli\App;
 use Minicli\Command\CommandController;
 use Minicli\Command\CommandRegistry;
@@ -10,21 +9,21 @@ use Minicli\Command\CommandRegistry;
 class DefaultController extends CommandController
 {
     /** @var  array */
-    protected $command_map = [];
+    protected array $commandMap = [];
 
-    public function boot(App $app)
+    public function boot(App $app): void
     {
         parent::boot($app);
-        $this->command_map = $app->command_registry->getCommandMap();
+        $this->commandMap = $app->commandRegistry->getCommandMap();
     }
     
-    public function handle()
+    public function handle(): void
     {
         $this->getPrinter()->info($this->app->getSignature());
 
         $print_table[] = [ 'Namespace', 'Command' ];
 
-        foreach ($this->command_map as $command => $sub) {
+        foreach ($this->commandMap as $command => $sub) {
             if ($command == 'web') {
                 continue;
             }
