@@ -20,9 +20,15 @@ beforeEach(function () {
     $this->app = $app;
 });
 
-it('Boots the app and loads commands', function () {
+it('Boots the app and loads CommandRegistry', function () {
     $registry = $this->app->commandRegistry;
     expect($registry)->toBeInstanceOf(CommandRegistry::class);
+});
+
+it('Boots the app and loads custom Service Providers', function () {
+    expect($this->app->content)->toBeInstanceOf(ContentServiceProvider::class);
+    expect($this->app->twig)->toBeInstanceOf(TwigServiceProvider::class);
+    expect($this->app->librarian)->toBeInstanceOf(LibrarianServiceProvider::class);
 });
 
 it('Boots the app and loads content', function () {
