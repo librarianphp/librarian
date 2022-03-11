@@ -14,10 +14,7 @@ use Librarian\WebController;
  */
 class ContentController extends WebController
 {
-    /**
-     * @throws \Exception
-     */
-    public function handle()
+    public function handle(): int
     {
         /** @var TwigServiceProvider $twig */
         $twig = $this->getApp()->twig;

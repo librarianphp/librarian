@@ -9,7 +9,7 @@ use Minicli\Command\CommandController;
 
 class DevToController extends CommandController
 {
-    public function handle()
+    public function handle(): void
     {
         /** @var DevtoServiceProvider $devto */
         $devto = $this->getApp()->devto;

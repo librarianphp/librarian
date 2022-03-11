@@ -10,11 +10,11 @@
     }
   },
   "require": {
-    "php": ">=7.3",
+    "php": ">=8.0",
     "ext-json": "*",
     "ext-curl": "*",
     "ext-xml": "*",
-    "librarianphp/librarian-core": "^1.0",
+    "librarianphp/librarian-core": "v3.0.x-dev",
     "suin/php-rss-writer": "^1.6"
   },
   "scripts": {

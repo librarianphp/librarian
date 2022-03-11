@@ -3,6 +3,7 @@ use Minicli\App;
 use Librarian\Provider\ContentServiceProvider;
 use Librarian\Provider\LibrarianServiceProvider;
 use Librarian\Provider\TwigServiceProvider;
+use Minicli\Command\CommandRegistry;
 
 beforeEach(function () {
     $this->config = [
@@ -17,6 +18,17 @@ beforeEach(function () {
     $app->addService('twig', new TwigServiceProvider());
     $app->addService('librarian', new LibrarianServiceProvider());
     $this->app = $app;
+});
+
+it('Boots the app and loads CommandRegistry', function () {
+    $registry = $this->app->commandRegistry;
+    expect($registry)->toBeInstanceOf(CommandRegistry::class);
+});
+
+it('Boots the app and loads custom Service Providers', function () {
+    expect($this->app->content)->toBeInstanceOf(ContentServiceProvider::class);
+    expect($this->app->twig)->toBeInstanceOf(TwigServiceProvider::class);
+    expect($this->app->librarian)->toBeInstanceOf(LibrarianServiceProvider::class);
 });
 
 it('Boots the app and loads content', function () {
