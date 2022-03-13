@@ -23,6 +23,7 @@
     ]
   },
   "require-dev": {
-    "pestphp/pest": "^1.0"
+    "pestphp/pest": "^1.0",
+    "minicli/curly": "^0.1.2"
   }
 }
