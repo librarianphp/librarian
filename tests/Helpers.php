@@ -15,12 +15,15 @@ function getCommandsPath(): string
 
 function getApp(): App
 {
-    return new App(include __DIR__ . '/../config.php');
+    return new App(array_merge(include __DIR__ . '/../config.php', [
+        'data_path' => __DIR__ . '/resources',
+        'cache_path' => __DIR__ . '/resources'
+    ]));
 }
 
 function getWebApp(): App
 {
-    $app = new App(include __DIR__ . '/../config.php');
+    $app = getApp();
     $app->addService('content', new ContentServiceProvider());
     $app->addService('twig', new TwigServiceProvider());
     $app->addService('librarian', new LibrarianServiceProvider());
