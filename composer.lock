@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "96a35299b7b244b1faa75390c852e04a",
+    "content-hash": "59b511b3627a460e73fe827e40adc7a8",
     "packages": [
         {
             "name": "composer/pcre",
@@ -724,7 +724,7 @@
         },
         {
             "name": "librarianphp/librarian-core",
-            "version": "v3.0.x-dev",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/librarianphp/librarian-core.git",
@@ -763,7 +763,7 @@
             "homepage": "https://github.com/librarianphp/librarian-core",
             "support": {
                 "issues": "https://github.com/librarianphp/librarian-core/issues",
-                "source": "https://github.com/librarianphp/librarian-core/tree/v3.0"
+                "source": "https://github.com/librarianphp/librarian-core/tree/3.0.2"
             },
             "funding": [
                 {
@@ -5271,9 +5271,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "librarianphp/librarian-core": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
