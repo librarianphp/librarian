@@ -1,0 +1,31 @@
+version: "3.7"
+services:
+  app:
+    build:
+      args:
+        user: librarian
+        uid: 1000
+      context: ./
+      dockerfile: ./.docker/Dockerfile
+    image: librarian-app
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./:/var/www
+    networks:
+      - librarian
+
+  nginx:
+    image: nginx:alpine
+    restart: unless-stopped
+    ports:
+      - 8000:80
+    volumes:
+      - ./:/var/www
+      - ./.docker/nginx:/etc/nginx/conf.d/
+    networks:
+      - librarian
+
+networks:
+  librarian:
+    driver: bridge
