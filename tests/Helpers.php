@@ -14,10 +14,7 @@ function getCommandsPath(): string
 
 function getApp(): App
 {
-    return new App(array_merge(include __DIR__ . '/../config.php', [
-        'data_path' => __DIR__ . '/resources',
-        'cache_path' => __DIR__ . '/resources'
-    ]));
+    return new App(load_config(__DIR__ . '/../config'));
 }
 
 function getWebApp(): App
@@ -33,7 +30,7 @@ function getWebApp(): App
 
 function getConfigValue(string $key): mixed
 {
-    $config = include __DIR__ . '/../config.php';
+    $config = load_config(__DIR__ . '/../config');
 
     return $config[$key] ?: null;
 }

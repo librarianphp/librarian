@@ -11,7 +11,7 @@ use Minicli\App;
 use Librarian\Provider\ContentServiceProvider;
 use Librarian\Provider\DevtoServiceProvider;
 
-$app = new App(require __DIR__ . '/config.php');
+$app = new App(load_config());
 $app->setSignature('
  _      ____  ____   ____    ____  ____   ____   ____  ____  
 | |    |    ||    \ |    \  /    ||    \ |    | /    ||    \ 

@@ -11,7 +11,7 @@ use Librarian\Provider\DevtoServiceProvider;
 use Librarian\Provider\LibrarianServiceProvider;
 use Librarian\Response;
 
-$app = new App(require __DIR__ . '/../config.php');
+$app = new App(load_config());
 
 $app->addService('twig', new TwigServiceProvider());
 $app->addService('router', new RouterServiceProvider());

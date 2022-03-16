@@ -1,15 +1,12 @@
 <?php
 
-/* Librarian Main Configuration */
-
 return [
     /****************************************************************************************
-     * Librarian site Info
-     * Update accordingly, and/or set up ENV vars with your preferred values.
+     * Librarian main config
+     * Values set here will overwrite default configuration from the /config dir.
      *****************************************************************************************/
     'site_name' => getenv('SITE_NAME') ?: 'Librarian',
     'site_author' => getenv('SITE_AUTHOR') ?: '@erikaheidi',
-    'author_email' => getenv('SITE_AUTHOR') ?: 'erika@erikaheidi.com',
     'site_description' => getenv('SITE_DESC') ?: 'Minimalist file-based CMS in PHP',
     'site_url' => getenv('SITE_URL') ?: 'http://localhost:8000',
     'site_root' => getenv('SITE_ROOT') ?: '/',
@@ -23,34 +20,6 @@ return [
         'Twitch' => getenv('LINK_TWITCH'),
     ],
     'app_debug' => getenv('APP_DEBUG') ?: true,
-
-    /*****************************************************************************
-     * End-to-end tests require you to set here the app url for testing.
-     * For Docker Compose setups, this should be where Nginx is running.
-     ******************************************************************************/
-    #'app_testing_url' => getenv('TEST_BASE_URL') ?: 'http://localhost', # Regular LEMP/LAMP/PHP built-in server
-    'app_testing_url' => getenv('TEST_BASE_URL') ?: 'http://nginx', # Docker Compose w/ separate Nginx service
-
-    /*****************************************************************************
-     * Dev.to Settings
-     * Set Up your dev.to username here or via ENV var.
-     * This is required if you want to import your posts from the dev.to platform.
-     ******************************************************************************/
+    'app_testing_url' => getenv('TEST_BASE_URL') ?: 'http://nginx',
     'devto_username' => getenv('DEVTO_USER'),
-    'devto_datadir' =>  '_to',
-
-    /****************************************************************************
-     * Other Settings
-     * You shouldn't need to change the next settings,
-     * but you are free to do so at your own risk.
-     *****************************************************************************/
-    'app_path' => __DIR__ . '/app/Command',
-    'theme' => 'unicorn',
-    'templates_path' => __DIR__ . '/app/Resources/themes/default',
-    'data_path' => __DIR__ . '/app/Resources/data',
-    'cache_path' => __DIR__ . '/var/cache',
-    'stencil_dir' => __DIR__ . '/app/Resources/stencil',
-    'stencil_locations' => [
-        'post' => __DIR__ . '/app/Resources/data/_p'
-    ]
 ];
