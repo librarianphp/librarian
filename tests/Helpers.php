@@ -14,30 +14,28 @@ function getCommandsPath(): string
 
 function getApp(): App
 {
-    $config = [
-        'app_path' => getCommandsPath()
-    ];
-
-    return new App($config);
+    return new App(array_merge(include __DIR__ . '/../config.php', [
+        'data_path' => __DIR__ . '/resources',
+        'cache_path' => __DIR__ . '/resources'
+    ]));
 }
 
 function getWebApp(): App
 {
-    $config = [
-        'debug' => true,
-        'app_path' => getCommandsPath(),
-        'templates_path' => __DIR__ . '/resources',
-        'data_path' => __DIR__ . '/resources',
-        'cache_path' => __DIR__ . '/resources'
-    ];
-
-    $app = new App($config);
+    $app = getApp();
     $app->addService('content', new ContentServiceProvider());
     $app->addService('twig', new TwigServiceProvider());
     $app->addService('librarian', new LibrarianServiceProvider());
     $app->addService('router', new RouterServiceProvider());
 
-    return new App($config);
+    return $app;
+}
+
+function getConfigValue(string $key): mixed
+{
+    $config = include __DIR__ . '/../config.php';
+
+    return $config[$key] ?: null;
 }
 
 function getCommandCall(array $parameters = null): CommandCall

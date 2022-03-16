@@ -14,7 +14,7 @@
     "ext-json": "*",
     "ext-curl": "*",
     "ext-xml": "*",
-    "librarianphp/librarian-core": "v3.0.x-dev",
+    "librarianphp/librarian-core": "^3.0.2",
     "suin/php-rss-writer": "^1.6"
   },
   "scripts": {
@@ -23,6 +23,7 @@
     ]
   },
   "require-dev": {
-    "pestphp/pest": "^1.0"
+    "pestphp/pest": "^1.0",
+    "minicli/pest-plugin-curly": "^0.1.1"
   }
 }

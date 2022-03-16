@@ -1,16 +1,15 @@
 <?php
 
-/**
- * Librarian Main Configuration
- */
+/* Librarian Main Configuration */
 
 return [
-    #########################################################################################
-    # Librarian site Info
-    # You should update this accordingly, and/or set up ENV vars with your preferred values.
-    #########################################################################################
+    /****************************************************************************************
+     * Librarian site Info
+     * Update accordingly, and/or set up ENV vars with your preferred values.
+     *****************************************************************************************/
     'site_name' => getenv('SITE_NAME') ?: 'Librarian',
-    'site_author' => getenv('SITE_AUTHOR') ?: 'librarian@example.com',
+    'site_author' => getenv('SITE_AUTHOR') ?: '@erikaheidi',
+    'author_email' => getenv('SITE_AUTHOR') ?: 'erika@erikaheidi.com',
     'site_description' => getenv('SITE_DESC') ?: 'Minimalist file-based CMS in PHP',
     'site_url' => getenv('SITE_URL') ?: 'http://localhost:8000',
     'site_root' => getenv('SITE_ROOT') ?: '/',
@@ -25,19 +24,26 @@ return [
     ],
     'app_debug' => getenv('APP_DEBUG') ?: true,
 
-    ##########################################################################################
-    # Dev.to Settings
-    # Set Up your dev.to username here or via ENV var.
-    # This is required if you want to import your posts from the dev.to platform.
-    ##########################################################################################
+    /*****************************************************************************
+     * End-to-end tests require you to set here the app url for testing.
+     * For Docker Compose setups, this should be where Nginx is running.
+     ******************************************************************************/
+    #'app_testing_url' => getenv('TEST_BASE_URL') ?: 'http://localhost', # Regular LEMP/LAMP/PHP built-in server
+    'app_testing_url' => getenv('TEST_BASE_URL') ?: 'http://nginx', # Docker Compose w/ separate Nginx service
+
+    /*****************************************************************************
+     * Dev.to Settings
+     * Set Up your dev.to username here or via ENV var.
+     * This is required if you want to import your posts from the dev.to platform.
+     ******************************************************************************/
     'devto_username' => getenv('DEVTO_USER'),
     'devto_datadir' =>  '_to',
 
-    ###################################################
-    # Other Settings
-    # You shouldn't need to change the next settings,
-    # but you are free to do so at your own risk.
-    ###################################################
+    /****************************************************************************
+     * Other Settings
+     * You shouldn't need to change the next settings,
+     * but you are free to do so at your own risk.
+     *****************************************************************************/
     'app_path' => __DIR__ . '/app/Command',
     'theme' => 'unicorn',
     'templates_path' => __DIR__ . '/app/Resources/themes/default',
