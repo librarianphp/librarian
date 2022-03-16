@@ -6,7 +6,6 @@ use Librarian\Provider\RouterServiceProvider;
 use Librarian\Provider\TwigServiceProvider;
 use Minicli\App;
 use Minicli\Command\CommandCall;
-use Minicli\Curly\Client;
 
 function getCommandsPath(): string
 {
@@ -42,22 +41,4 @@ function getConfigValue(string $key): mixed
 function getCommandCall(array $parameters = null): CommandCall
 {
     return new CommandCall(array_merge(['minicli'], $parameters));
-}
-
-function getResponseCode(string $endpoint): int
-{
-    $base_url = getConfigValue('app_testing_url');
-    $client = new Client();
-    $response = $client->get($base_url . $endpoint, ['User-agent: Curly'], true);
-
-    return $response['code'];
-}
-
-function getResponseBody(string $endpoint): string
-{
-    $base_url = getConfigValue('app_testing_url');
-    $client = new Client();
-    $response = $client->get($base_url . $endpoint, ['User-agent: Curly'], true);
-
-    return $response['body'];
 }

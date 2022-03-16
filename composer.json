@@ -24,6 +24,6 @@
   },
   "require-dev": {
     "pestphp/pest": "^1.0",
-    "minicli/curly": "^0.1.2"
+    "minicli/pest-plugin-curly": "^0.1.1"
   }
 }
