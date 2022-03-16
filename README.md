@@ -21,6 +21,54 @@ Liquid tags supported at the moment:
 
 Librarian **is not** a static site generator, and the idea is to provide a mix of static files and dynamic capabilities that don't require sessions or databases.
 
+## Using the included Docker Compose setup
+
+The latest Librarian version includes a built-in Docker + Docker Compose setup.
+
+Once the files are in place, you can get the environment up and running with:
+
+```shell
+docker-compose up -d
+```
+
+This will run the containers in background.
+
+To execute commands such as `composer install`, run:
+
+```shell
+docker-compose exec app composer install
+```
+
+Running NPM:
+
+```shell
+docker-compose exec app npm install
+```
+
+Compiling css assets:
+
+```shell
+docker-compose exec app npm run dev
+```
+
+Stopping the environment:
+
+```shell
+docker-compose stop
+```
+
+Re-starting the environment:
+
+```shell
+docker-compose start
+```
+
+Destroying the environment:
+
+```shell
+docker-compose down
+```
+
 ## Documentation
 
 The official documentation is available at https://librarianphp.dev. It is by no means complete, more content will be added as soon as possible.
