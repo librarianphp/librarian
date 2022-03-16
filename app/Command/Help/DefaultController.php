@@ -16,7 +16,7 @@ class DefaultController extends CommandController
         parent::boot($app);
         $this->commandMap = $app->commandRegistry->getCommandMap();
     }
-    
+
     public function handle(): void
     {
         $this->getPrinter()->info($this->app->getSignature());

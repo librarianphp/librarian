@@ -20,10 +20,17 @@
   "scripts": {
     "post-install-cmd": [
       "@php -r \"file_exists('config.php') || copy('config_sample.php', 'config.php');\""
-    ]
+    ],
+    "test" : ["pest"],
+    "csfix": ["php-cs-fixer fix"]
   },
   "require-dev": {
     "pestphp/pest": "^1.0",
     "minicli/pest-plugin-curly": "^0.1.1"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
   }
 }

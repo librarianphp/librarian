@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Command\Cache;
 
 use Librarian\Provider\ContentServiceProvider;
@@ -31,5 +30,4 @@ class RefreshController extends CommandController
 
         $this->getPrinter()->success("Cache updated.");
     }
-
 }

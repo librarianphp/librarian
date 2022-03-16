@@ -28,7 +28,6 @@ class ContentController extends WebController
             $content = $content_provider->fetch($request->getRoute() . '/' . $request->getSlug());
 
             if ($content === null) {
-
                 $page = 1;
                 $limit = $this->getApp()->config->posts_per_page ?: 10;
                 $params = $this->getRequest()->getParams();

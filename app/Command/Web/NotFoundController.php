@@ -18,5 +18,4 @@ class NotFoundController extends WebController
 
         $response->output();
     }
-
 }

@@ -43,8 +43,7 @@ class CoverController extends WebController
                 $email = $this->config->author_email;
                 $default = "https://librarianphp.dev/img/default_author.png";
                 $size = 60;
-                $author_avatar = "https://www.gravatar.com/avatar/" . md5(strtolower(trim($email))) . "?d=" . urlencode( $default ) . "&s=" . $size;
-
+                $author_avatar = "https://www.gravatar.com/avatar/" . md5(strtolower(trim($email))) . "?d=" . urlencode($default) . "&s=" . $size;
             } else {
                 $author_avatar = "/img/default_author.png";
             }
@@ -64,9 +63,8 @@ class CoverController extends WebController
         //imagestring($image, 1, 5, 5,  $title, $text_color);
         imagettftext($image, 20, 0, 10, 20, $color_black, $font, $title);
 
-        header ('Content-Type: image/png');
+        header('Content-Type: image/png');
         imagepng($image);
         imagedestroy($image);
     }
-
 }

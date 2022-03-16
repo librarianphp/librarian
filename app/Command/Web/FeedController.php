@@ -21,7 +21,7 @@ class FeedController extends WebController
             ->url($this->getApp()->config->site_url)
             ->feedUrl($this->getApp()->config->site_url . '/feed')
             ->language('en-US')
-            ->copyright('Copyright ' . date('Y') . ', '. $this->getApp()->config->site_name )
+            ->copyright('Copyright ' . date('Y') . ', '. $this->getApp()->config->site_name)
             ->pubDate(strtotime(date('Y-m-d H:i:s')))
             ->lastBuildDate(strtotime(date('Y-m-d H:i:s')))
             ->ttl(60)

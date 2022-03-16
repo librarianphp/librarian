@@ -1,4 +1,5 @@
 <?php
+
 use Minicli\App;
 use Librarian\Provider\ContentServiceProvider;
 use Librarian\Provider\LibrarianServiceProvider;

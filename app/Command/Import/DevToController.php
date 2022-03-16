@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Command\Import;
 
 use Librarian\Exception\ApiException;
@@ -24,7 +23,8 @@ class DevToController extends CommandController
 
         if (!$this->getApp()->config->devto_username) {
             if ($app_debug) {
-                $this->getPrinter()->error("ERROR: dev.to username not set.\n" .
+                $this->getPrinter()->error(
+                    "ERROR: dev.to username not set.\n" .
                 "You must define a devto_username in your config file\n" .
                 "if you want to import posts from that platform."
                 );
@@ -42,5 +42,4 @@ class DevToController extends CommandController
 
         $this->getPrinter()->success("Import Finished.");
     }
-
 }

@@ -4,14 +4,14 @@ namespace App;
 
 class Stencil
 {
-    protected $stencil_dir;
+    protected string $stencil_dir;
 
     public function __construct($stencil_dir)
     {
         $this->stencil_dir = $stencil_dir;
     }
 
-    public function applyTemplate($template_name, array $variables = [])
+    public function applyTemplate($template_name, array $variables = []): string
     {
         $template = file_get_contents($this->stencil_dir . '/' . $template_name . '.tpl');
 

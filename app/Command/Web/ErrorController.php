@@ -18,5 +18,4 @@ class ErrorController extends WebController
 
         $response->output();
     }
-
 }
