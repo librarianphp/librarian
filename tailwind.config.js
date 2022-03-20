@@ -1,8 +1,9 @@
 module.exports = {
-    purge: [
-        './app/Resources/themes/**/**/*.html.twig',
+    content: [
+        './app/Resources/themes/**/*.html.twig',
+        './app/Resources/css/**/*.css',
     ],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'media',
     theme: {
         extend: {
             typography: {

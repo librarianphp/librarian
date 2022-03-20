@@ -9,7 +9,7 @@
     "production": "./node_modules/postcss-cli/bin/postcss app/Resources/css/app.css -o web/css/app.css"
   },
   "dependencies": {
-    "@tailwindcss/typography": "^0.4.1",
+    "@tailwindcss/typography": "^0.5.1",
     "postcss-import": "^14.0.2",
     "tailwind": "^4.0.0"
   },
