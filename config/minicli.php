@@ -6,7 +6,11 @@ return [
      * You shouldn't need to change the next settings,
      * but you are free to do so at your own risk.
      *****************************************************************************/
-    'app_path' => __DIR__ . '/../app/Command',
+    'app_path' => [
+        __DIR__ . '/../app/Command',
+        '@librarianphp/command-help',
+        '@librarianphp/command-create',
+    ],
     'theme' => 'unicorn',
     'templates_path' => __DIR__ . '/../app/Resources/themes/default',
     'data_path' => __DIR__ . '/../app/Resources/data',

@@ -18,7 +18,9 @@
     "ext-curl": "*",
     "ext-xml": "*",
     "librarianphp/librarian-core": "^3.0.2",
-    "suin/php-rss-writer": "^1.6"
+    "suin/php-rss-writer": "^1.6",
+    "librarianphp/command-help": "^0.1.0",
+    "librarianphp/command-create": "^0.1.0"
   },
   "scripts": {
     "post-install-cmd": [
