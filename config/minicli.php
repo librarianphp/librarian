@@ -10,6 +10,7 @@ return [
         __DIR__ . '/../app/Command',
         '@librarianphp/command-help',
         '@librarianphp/command-create',
+        '@librarianphp/command-cache',
     ],
     'theme' => 'unicorn',
     'templates_path' => __DIR__ . '/../app/Resources/themes/default',

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "353c4f74c5877b056315e9aae5cd6241",
+    "content-hash": "812c55dcfdefe171caea4fb7289748a8",
     "packages": [
         {
             "name": "dflydev/dot-access-data",
@@ -268,6 +268,46 @@
                 }
             ],
             "time": "2022-12-11T20:36:23+00:00"
+        },
+        {
+            "name": "librarianphp/command-cache",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/librarianphp/command-cache.git",
+                "reference": "aeec13de699786793f836ae51c837acfe0da1d0b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/librarianphp/command-cache/zipball/aeec13de699786793f836ae51c837acfe0da1d0b",
+                "reference": "aeec13de699786793f836ae51c837acfe0da1d0b",
+                "shasum": ""
+            },
+            "require": {
+                "minicli/minicli": "^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "librarianphp\\": "Command/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Librarian's built-in cache command",
+            "homepage": "https://github.com/librarianphp/command-cache",
+            "keywords": [
+                "cli",
+                "command-line",
+                "markdown"
+            ],
+            "support": {
+                "issues": "https://github.com/librarianphp/command-cache/issues",
+                "source": "https://github.com/librarianphp/command-cache/tree/0.1.0"
+            },
+            "time": "2023-04-12T18:53:01+00:00"
         },
         {
             "name": "librarianphp/command-create",
