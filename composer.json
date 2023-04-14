@@ -18,7 +18,11 @@
     "ext-curl": "*",
     "ext-xml": "*",
     "librarianphp/librarian-core": "^3.0.2",
-    "suin/php-rss-writer": "^1.6"
+    "suin/php-rss-writer": "^1.6",
+    "librarianphp/command-help": "^0.1.0",
+    "librarianphp/command-create": "^0.1.0",
+    "librarianphp/command-cache": "^0.1.0",
+    "librarianphp/command-web": "^0.1.0"
   },
   "scripts": {
     "post-install-cmd": [
@@ -28,8 +32,9 @@
     "csfix": ["php-cs-fixer fix"]
   },
   "require-dev": {
-    "pestphp/pest": "^1.0",
-    "minicli/pest-plugin-curly": "^0.1.1"
+    "pestphp/pest": "^2.0",
+    "minicli/pest-plugin-curly": "^0.2.1",
+    "friendsofphp/php-cs-fixer": "^3.16"
   },
   "config": {
     "allow-plugins": {

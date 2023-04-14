@@ -5,7 +5,8 @@ beforeEach(function () {
 });
 
 it('serves the index page', function () {
-    $this->matchResponse($this->base_url . '/', 200);
+    //$this->matchResponse($this->base_url . '/', 200);
+    $this->matchResponse('http://localhost:8000', 200);
 })->skip(getenv('GITHUB_ACTIONS'), 'Running on GH...');
 
 it('redirects to 404 page when content is not found', function () {
