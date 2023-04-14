@@ -33,7 +33,8 @@
   },
   "require-dev": {
     "pestphp/pest": "^2.0",
-    "minicli/pest-plugin-curly": "^0.2.1"
+    "minicli/pest-plugin-curly": "^0.2.1",
+    "friendsofphp/php-cs-fixer": "^3.16"
   },
   "config": {
     "allow-plugins": {

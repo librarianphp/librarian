@@ -9,4 +9,3 @@ test('default command "help" is correctly loaded', function () {
     $app = getApp();
     $app->runCommand(['librarian', 'help']);
 })->expectOutputRegex("/help/");
-
