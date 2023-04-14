@@ -11,6 +11,7 @@ return [
         '@librarianphp/command-help',
         '@librarianphp/command-create',
         '@librarianphp/command-cache',
+        '@librarianphp/command-web',
     ],
     'theme' => 'unicorn',
     'templates_path' => __DIR__ . '/../app/Resources/themes/default',

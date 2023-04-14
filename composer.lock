@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "812c55dcfdefe171caea4fb7289748a8",
+    "content-hash": "1b1a0e59cbf77489d2ee7e94daa6431f",
     "packages": [
         {
             "name": "dflydev/dot-access-data",
@@ -389,6 +389,52 @@
                 "source": "https://github.com/librarianphp/command-help/tree/0.1.2"
             },
             "time": "2023-04-12T18:35:33+00:00"
+        },
+        {
+            "name": "librarianphp/command-web",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/librarianphp/command-web.git",
+                "reference": "ec8c673b374b9661ed609b79c17e02726024ba92"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/librarianphp/command-web/zipball/ec8c673b374b9661ed609b79c17e02726024ba92",
+                "reference": "ec8c673b374b9661ed609b79c17e02726024ba92",
+                "shasum": ""
+            },
+            "require": {
+                "librarianphp/librarian-core": "^3.0",
+                "minicli/minicli": "^3.2"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.16",
+                "mockery/mockery": "^1.5",
+                "pestphp/pest": "^2.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "librarianphp\\": "Command/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Librarian's web controllers",
+            "homepage": "https://github.com/librarianphp/command-web",
+            "keywords": [
+                "cli",
+                "command-line",
+                "markdown"
+            ],
+            "support": {
+                "issues": "https://github.com/librarianphp/command-web/issues",
+                "source": "https://github.com/librarianphp/command-web/tree/0.1.0"
+            },
+            "time": "2023-04-14T18:36:54+00:00"
         },
         {
             "name": "librarianphp/librarian-core",

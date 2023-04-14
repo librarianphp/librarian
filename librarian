@@ -27,4 +27,17 @@ Type "./librarian help" for help with available commands.
 $app->addService('content', new ContentServiceProvider());
 $app->addService('devto', new DevtoServiceProvider());
 
-$app->runCommand($argv);
+try {
+    $app->runCommand($argv);
+} catch (CommandNotFoundException $notFoundException) {
+    $app->getPrinter()->error("Command Not Found.");
+    return 1;
+} catch (Exception $exception) {
+    if ($app->config->debug) {
+        $app->getPrinter()->error("An error occurred:");
+        $app->getPrinter()->error($exception->getMessage());
+    }
+    return 1;
+}
+
+return 0;
