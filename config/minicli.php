@@ -12,6 +12,7 @@ return [
         '@librarianphp/command-create',
         '@librarianphp/command-cache',
         '@librarianphp/command-web',
+        '@librarianphp/command-build'
     ],
     'theme' => 'unicorn',
     'templates_path' => __DIR__ . '/../app/Resources/themes/default',
@@ -20,5 +21,5 @@ return [
     'stencil_dir' => __DIR__ . '/../app/Resources/stencil',
     'stencil_locations' => [
         'post' => __DIR__ . '/../app/Resources/data/_p'
-    ]
+    ],
 ];

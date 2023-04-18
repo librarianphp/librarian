@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "35058d4c33fac71fa460d8a7508eeb81",
+    "content-hash": "730125e90fd3300a54093e31df418562",
     "packages": [
         {
             "name": "dflydev/dot-access-data",
@@ -268,6 +268,54 @@
                 }
             ],
             "time": "2022-12-11T20:36:23+00:00"
+        },
+        {
+            "name": "librarianphp/command-build",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/librarianphp/command-build.git",
+                "reference": "642d16bd2fd5f485c4905bdf4a65177d6cb51de3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/librarianphp/command-build/zipball/642d16bd2fd5f485c4905bdf4a65177d6cb51de3",
+                "reference": "642d16bd2fd5f485c4905bdf4a65177d6cb51de3",
+                "shasum": ""
+            },
+            "require": {
+                "librarianphp/librarian-core": "^3.0",
+                "minicli/minicli": "^3.2",
+                "suin/php-rss-writer": "^1.6"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.16",
+                "mockery/mockery": "^1.5",
+                "pestphp/pest": "^2.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "librarianphp\\": "Command/",
+                    "Librarian\\Builder\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Librarian's static build command",
+            "homepage": "https://github.com/librarianphp/command-build",
+            "keywords": [
+                "cli",
+                "command-line",
+                "markdown"
+            ],
+            "support": {
+                "issues": "https://github.com/librarianphp/command-build/issues",
+                "source": "https://github.com/librarianphp/command-build/tree/0.1.0"
+            },
+            "time": "2023-04-18T18:11:05+00:00"
         },
         {
             "name": "librarianphp/command-cache",

@@ -5,12 +5,12 @@ return [
      * Librarian main config
      * Values set here will overwrite default configuration from the /config dir.
      *****************************************************************************************/
-    'site_name' => getenv('SITE_NAME') ?: 'Librarian',
-    'site_author' => getenv('SITE_AUTHOR') ?: '@erikaheidi',
-    'site_description' => getenv('SITE_DESC') ?: 'Minimalist file-based CMS in PHP',
-    'site_url' => getenv('SITE_URL') ?: 'http://localhost:8000',
-    'site_root' => getenv('SITE_ROOT') ?: '/',
-    'site_about' => getenv('SITE_ABOUT') ?: '_p/about',
+    'site_name' => envconfig('SITE_NAME', 'Librarian'),
+    'site_author' => envconfig('SITE_AUTHOR', '@erikaheidi'),
+    'site_description' => envconfig('SITE_DESC', 'Minimalist file-based CMS in PHP'),
+    'site_url' => envconfig('SITE_URL', 'http://localhost:8000'),
+    'site_root' => envconfig('SITE_ROOT', '/'),
+    'site_about' => envconfig('SITE_ABOUT', '_p/about'),
     'posts_per_page' => 10,
     'social_links' => [
         'Twitter' => getenv('LINK_TWITTER'),
@@ -22,4 +22,5 @@ return [
     'app_debug' => getenv('APP_DEBUG') ?: true,
     'app_testing_url' => getenv('TEST_BASE_URL') ?: 'http://nginx',
     'devto_username' => getenv('DEVTO_USER'),
+    'output_path' => envconfig('APP_OUTPUT', __DIR__ . '/public')
 ];
