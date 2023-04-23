@@ -10,7 +10,7 @@ return [
     'site_description' => envconfig('SITE_DESC', 'Minimalist file-based CMS in PHP'),
     'site_url' => envconfig('SITE_URL', 'http://localhost:8000'),
     'site_root' => envconfig('SITE_ROOT', '/'),
-    'site_about' => envconfig('SITE_ABOUT', '_p/about'),
+    'site_about' => envconfig('SITE_ABOUT', 'p/about'),
     'posts_per_page' => 10,
     'social_links' => [
         'Twitter' => getenv('LINK_TWITTER'),
@@ -20,7 +20,6 @@ return [
         'Twitch' => getenv('LINK_TWITCH'),
     ],
     'app_debug' => getenv('APP_DEBUG') ?: true,
-    'app_testing_url' => getenv('TEST_BASE_URL') ?: 'http://nginx',
-    'devto_username' => getenv('DEVTO_USER'),
+    'app_testing_url' => getenv('TEST_BASE_URL') ?: 'http://localhost:8000',
     'output_path' => envconfig('APP_OUTPUT', __DIR__ . '/public')
 ];

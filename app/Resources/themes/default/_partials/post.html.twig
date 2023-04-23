@@ -8,7 +8,13 @@
     <h1 class="text-3xl lg:text-3xl my-4 text-gray-600 hover:text-blue-800">
         <a href="{{ site_url() }}/{{ content.getLink() }}" title="Read the full article: {{ content.frontMatterGet('title') }}">{{ content.frontMatterGet('title') ?? content.title }}</a>
     </h1>
-    <p class="text-md text-gray-500 mb-4">{{ content.getDate() }}</p>
+    <p class="text-md text-gray-500 mb-4">
+        {% if content.frontMatterHas('created_at') %}
+            {{ content.frontMatterGet('created_at')|date("F jS, Y") }}
+        {% else %}
+            {{ content.getDate() }}
+        {% endif %}
+    </p>
     <article class="prose xl:prose-xl max-w-none mb-6">
         {% if full %}
             {{ content.body_html|raw }}

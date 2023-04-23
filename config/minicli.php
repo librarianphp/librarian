@@ -20,7 +20,8 @@ return [
     'cache_path' => __DIR__ . '/../var/cache',
     'stencil_dir' => __DIR__ . '/../app/Resources/stencil',
     'stencil_locations' => [
-        'post' => __DIR__ . '/../app/Resources/data/_p'
+        'post' => __DIR__ . '/../content/_p',
+        'blog' => __DIR__ . '/../content/blog'
     ],
     'rss_feed' => php_sapi_name() !== 'cli' ? 'feed' : 'feed.rss',
 ];
