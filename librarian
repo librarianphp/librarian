@@ -7,9 +7,11 @@ if (php_sapi_name() !== 'cli') {
 
 require __DIR__ . '/vendor/autoload.php';
 
+use Librarian\Builder\StaticBuilder;
+use Librarian\Provider\LibrarianServiceProvider;
+use Librarian\Provider\TwigServiceProvider;
 use Minicli\App;
 use Librarian\Provider\ContentServiceProvider;
-use Librarian\Provider\DevtoServiceProvider;
 
 $app = new App(load_config());
 $app->setSignature('
@@ -25,7 +27,11 @@ Type "./librarian help" for help with available commands.
 ');
 
 $app->addService('content', new ContentServiceProvider());
-$app->addService('devto', new DevtoServiceProvider());
+$app->addService('twig', new TwigServiceProvider());
+$app->addService('librarian', new LibrarianServiceProvider());
+$app->addService('builder', new StaticBuilder());
+
+$app->librarian->boot();
 
 try {
     $app->runCommand($argv);
