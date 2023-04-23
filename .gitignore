@@ -2,6 +2,5 @@
 config.php
 vendor/
 node_modules/
-public/
 .phpunit.result.cache
 .php-cs-fixer.cache
