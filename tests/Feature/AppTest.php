@@ -27,13 +27,13 @@ it('Boots the app and loads CommandRegistry', function () {
 });
 
 it('Boots the app and loads custom Service Providers', function () {
-    expect($this->app->content)->toBeInstanceOf(ContentServiceProvider::class);
-    expect($this->app->twig)->toBeInstanceOf(TwigServiceProvider::class);
-    expect($this->app->librarian)->toBeInstanceOf(LibrarianServiceProvider::class);
+    expect($this->app->content)->toBeInstanceOf(ContentServiceProvider::class)
+        ->and($this->app->twig)->toBeInstanceOf(TwigServiceProvider::class)
+        ->and($this->app->librarian)->toBeInstanceOf(LibrarianServiceProvider::class);
 });
 
 it('Boots the app and loads content', function () {
     $content = $this->app->content->fetch('posts/test0');
-    expect($content->frontMatterGet('title'))->toEqual("Devo Produzir Conteúdo em Português ou Inglês?");
-    expect($content->body_markdown)->toBeString();
+    expect($content->frontMatterGet('title'))->toEqual("Devo Produzir Conteúdo em Português ou Inglês?")
+        ->and($content->body_markdown)->toBeString();
 });
