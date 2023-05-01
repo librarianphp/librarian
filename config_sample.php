@@ -12,7 +12,7 @@ return [
     'site_description' => envconfig('SITE_DESC', 'Librarian is a static site generator inspired by Hugo and built in PHP.'),
     'site_url' => envconfig('SITE_URL', 'http://localhost:8000'),
     'site_root' => envconfig('SITE_ROOT', '/'),
-    'site_about' => envconfig('SITE_ABOUT', '_p/about'),
+    'site_about' => envconfig('SITE_ABOUT', 'page/about'),
     # Set site_index if you want a custom index page
     #'site_index' => 'getting-started/introduction',
 
