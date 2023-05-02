@@ -13,17 +13,17 @@
     ]
   },
   "require": {
-    "php": ">=8.0",
+    "php": ">=8.1",
     "ext-json": "*",
     "ext-curl": "*",
     "ext-xml": "*",
-    "librarianphp/librarian-core": "^3.0.2",
+    "librarianphp/librarian-core": "^4.0",
     "suin/php-rss-writer": "^1.6",
-    "librarianphp/command-help": "^0.1.0",
-    "librarianphp/command-create": "^0.1.0",
-    "librarianphp/command-cache": "^0.1.0",
-    "librarianphp/command-web": "^0.1.0",
-    "librarianphp/command-build": "^0.1.0"
+    "librarianphp/command-help": "^1.0",
+    "librarianphp/command-create": "^1.0",
+    "librarianphp/command-cache": "^1.0",
+    "librarianphp/command-web": "^1.0",
+    "librarianphp/command-build": "^1.0"
   },
   "scripts": {
     "post-install-cmd": [

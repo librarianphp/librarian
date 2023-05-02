@@ -1,7 +1,7 @@
 ---
 title: {{ title }}
 description: {{ description }}
-tags: post, example, sample, template
+tags: post, example
 cover_image: https://picsum.photos/780/300
 ---
 
