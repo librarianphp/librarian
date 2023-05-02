@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "730125e90fd3300a54093e31df418562",
+    "content-hash": "760d3b1e5efb771fcbbb08840022b2e8",
     "packages": [
         {
             "name": "dflydev/dot-access-data",
@@ -271,21 +271,21 @@
         },
         {
             "name": "librarianphp/command-build",
-            "version": "0.1.1",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/librarianphp/command-build.git",
-                "reference": "721b2b26eec9a24e1422b069f99a0a315b842ea9"
+                "reference": "94a138698bff49d93d703fb62a5373058561e4ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/librarianphp/command-build/zipball/721b2b26eec9a24e1422b069f99a0a315b842ea9",
-                "reference": "721b2b26eec9a24e1422b069f99a0a315b842ea9",
+                "url": "https://api.github.com/repos/librarianphp/command-build/zipball/94a138698bff49d93d703fb62a5373058561e4ab",
+                "reference": "94a138698bff49d93d703fb62a5373058561e4ab",
                 "shasum": ""
             },
             "require": {
-                "librarianphp/librarian-core": "^3.0",
-                "minicli/minicli": "^3.2",
+                "librarianphp/librarian-core": "^4.0",
+                "minicli/minicli": "^4.0",
                 "suin/php-rss-writer": "^1.6"
             },
             "require-dev": {
@@ -313,26 +313,30 @@
             ],
             "support": {
                 "issues": "https://github.com/librarianphp/command-build/issues",
-                "source": "https://github.com/librarianphp/command-build/tree/0.1.1"
+                "source": "https://github.com/librarianphp/command-build/tree/1.0.0"
             },
-            "time": "2023-04-25T09:11:24+00:00"
+            "time": "2023-05-02T17:58:27+00:00"
         },
         {
             "name": "librarianphp/command-cache",
-            "version": "0.1.0",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/librarianphp/command-cache.git",
-                "reference": "aeec13de699786793f836ae51c837acfe0da1d0b"
+                "reference": "129ffa03f8fcf1823f6e7a282269b56e4678df0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/librarianphp/command-cache/zipball/aeec13de699786793f836ae51c837acfe0da1d0b",
-                "reference": "aeec13de699786793f836ae51c837acfe0da1d0b",
+                "url": "https://api.github.com/repos/librarianphp/command-cache/zipball/129ffa03f8fcf1823f6e7a282269b56e4678df0a",
+                "reference": "129ffa03f8fcf1823f6e7a282269b56e4678df0a",
                 "shasum": ""
             },
             "require": {
-                "minicli/minicli": "^3.0"
+                "minicli/minicli": "^4.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.16",
+                "pestphp/pest": "^2.4"
             },
             "type": "library",
             "autoload": {
@@ -353,27 +357,31 @@
             ],
             "support": {
                 "issues": "https://github.com/librarianphp/command-cache/issues",
-                "source": "https://github.com/librarianphp/command-cache/tree/0.1.0"
+                "source": "https://github.com/librarianphp/command-cache/tree/1.0.0"
             },
-            "time": "2023-04-12T18:53:01+00:00"
+            "time": "2023-05-02T18:01:01+00:00"
         },
         {
             "name": "librarianphp/command-create",
-            "version": "0.1.2",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/librarianphp/command-create.git",
-                "reference": "b6ebb395134e8448f4d898b3a3a81c4c5d2289aa"
+                "reference": "2bc4164132227fbdacf99e7716573c2b0762bde5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/librarianphp/command-create/zipball/b6ebb395134e8448f4d898b3a3a81c4c5d2289aa",
-                "reference": "b6ebb395134e8448f4d898b3a3a81c4c5d2289aa",
+                "url": "https://api.github.com/repos/librarianphp/command-create/zipball/2bc4164132227fbdacf99e7716573c2b0762bde5",
+                "reference": "2bc4164132227fbdacf99e7716573c2b0762bde5",
                 "shasum": ""
             },
             "require": {
-                "minicli/minicli": "^3.0",
+                "minicli/minicli": "^4.0",
                 "minicli/stencil": "^0.1.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.16",
+                "pestphp/pest": "^2.4"
             },
             "type": "library",
             "autoload": {
@@ -394,26 +402,30 @@
             ],
             "support": {
                 "issues": "https://github.com/librarianphp/command-create/issues",
-                "source": "https://github.com/librarianphp/command-create/tree/0.1.2"
+                "source": "https://github.com/librarianphp/command-create/tree/1.0.0"
             },
-            "time": "2023-04-12T18:36:43+00:00"
+            "time": "2023-05-02T18:00:28+00:00"
         },
         {
             "name": "librarianphp/command-help",
-            "version": "0.1.2",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/librarianphp/command-help.git",
-                "reference": "6172038405a81bbf53472ccf69bee2c1a3bb8dc7"
+                "reference": "9419727df507d94a6cbe07f4d81d8644cee4f3ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/librarianphp/command-help/zipball/6172038405a81bbf53472ccf69bee2c1a3bb8dc7",
-                "reference": "6172038405a81bbf53472ccf69bee2c1a3bb8dc7",
+                "url": "https://api.github.com/repos/librarianphp/command-help/zipball/9419727df507d94a6cbe07f4d81d8644cee4f3ce",
+                "reference": "9419727df507d94a6cbe07f4d81d8644cee4f3ce",
                 "shasum": ""
             },
             "require": {
-                "minicli/minicli": "^3.0"
+                "minicli/minicli": "^4.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.16",
+                "pestphp/pest": "^2.4"
             },
             "type": "library",
             "autoload": {
@@ -434,27 +446,27 @@
             ],
             "support": {
                 "issues": "https://github.com/librarianphp/command-help/issues",
-                "source": "https://github.com/librarianphp/command-help/tree/0.1.2"
+                "source": "https://github.com/librarianphp/command-help/tree/1.0.0"
             },
-            "time": "2023-04-12T18:35:33+00:00"
+            "time": "2023-05-02T18:07:33+00:00"
         },
         {
             "name": "librarianphp/command-web",
-            "version": "0.1.0",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/librarianphp/command-web.git",
-                "reference": "ec8c673b374b9661ed609b79c17e02726024ba92"
+                "reference": "470cd0be75a666b7aa92a068c0e24bf3a7fb006c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/librarianphp/command-web/zipball/ec8c673b374b9661ed609b79c17e02726024ba92",
-                "reference": "ec8c673b374b9661ed609b79c17e02726024ba92",
+                "url": "https://api.github.com/repos/librarianphp/command-web/zipball/470cd0be75a666b7aa92a068c0e24bf3a7fb006c",
+                "reference": "470cd0be75a666b7aa92a068c0e24bf3a7fb006c",
                 "shasum": ""
             },
             "require": {
-                "librarianphp/librarian-core": "^3.0",
-                "minicli/minicli": "^3.2"
+                "librarianphp/librarian-core": "^4.0",
+                "minicli/minicli": "^4.0"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^3.16",
@@ -480,22 +492,22 @@
             ],
             "support": {
                 "issues": "https://github.com/librarianphp/command-web/issues",
-                "source": "https://github.com/librarianphp/command-web/tree/0.1.0"
+                "source": "https://github.com/librarianphp/command-web/tree/1.0.0"
             },
-            "time": "2023-04-14T18:36:54+00:00"
+            "time": "2023-05-02T18:03:49+00:00"
         },
         {
             "name": "librarianphp/librarian-core",
-            "version": "3.1.6",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/librarianphp/librarian-core.git",
-                "reference": "2bec0e44ee558f44029b38ec7e35f40836aec791"
+                "reference": "fbbbfc45784b90f62d35876b0257bc59ef3725bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/librarianphp/librarian-core/zipball/2bec0e44ee558f44029b38ec7e35f40836aec791",
-                "reference": "2bec0e44ee558f44029b38ec7e35f40836aec791",
+                "url": "https://api.github.com/repos/librarianphp/librarian-core/zipball/fbbbfc45784b90f62d35876b0257bc59ef3725bf",
+                "reference": "fbbbfc45784b90f62d35876b0257bc59ef3725bf",
                 "shasum": ""
             },
             "require": {
@@ -504,7 +516,8 @@
                 "librarianphp/parsed": "^1.0",
                 "minicli/curly": "^0.2.0",
                 "minicli/minicache": "^0.2.0",
-                "minicli/minicli": "^3.0",
+                "minicli/minicli": "^4.0",
+                "php": ">=8.1",
                 "twig/twig": "^3.0"
             },
             "require-dev": {
@@ -525,7 +538,7 @@
             "homepage": "https://github.com/librarianphp/librarian-core",
             "support": {
                 "issues": "https://github.com/librarianphp/librarian-core/issues",
-                "source": "https://github.com/librarianphp/librarian-core/tree/3.1.6"
+                "source": "https://github.com/librarianphp/librarian-core/tree/4.0.0"
             },
             "funding": [
                 {
@@ -533,7 +546,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-05-01T16:14:03+00:00"
+            "time": "2023-05-02T17:44:47+00:00"
         },
         {
             "name": "librarianphp/parsed",
@@ -671,26 +684,25 @@
         },
         {
             "name": "minicli/minicli",
-            "version": "3.2.1",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/minicli/minicli.git",
-                "reference": "2d31b303461d0ec1f8c6d0be00f8b26be8766fbe"
+                "reference": "d3a83a3e7b31c1f0a200f1c19da9dd02b3a1fd85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/minicli/minicli/zipball/2d31b303461d0ec1f8c6d0be00f8b26be8766fbe",
-                "reference": "2d31b303461d0ec1f8c6d0be00f8b26be8766fbe",
+                "url": "https://api.github.com/repos/minicli/minicli/zipball/d3a83a3e7b31c1f0a200f1c19da9dd02b3a1fd85",
+                "reference": "d3a83a3e7b31c1f0a200f1c19da9dd02b3a1fd85",
                 "shasum": ""
             },
             "require": {
                 "ext-readline": "*",
-                "php": ">=8"
+                "php": ">=8.1"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^3.5",
-                "pestphp/pest": "^1.0",
-                "phpunit/phpunit": "^9.0"
+                "pestphp/pest": "^2.5"
             },
             "type": "library",
             "autoload": {
@@ -710,7 +722,7 @@
             ],
             "support": {
                 "issues": "https://github.com/minicli/minicli/issues",
-                "source": "https://github.com/minicli/minicli/tree/3.2.1"
+                "source": "https://github.com/minicli/minicli/tree/4.0.0"
             },
             "funding": [
                 {
@@ -718,7 +730,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-09-23T09:04:22+00:00"
+            "time": "2023-04-30T08:19:16+00:00"
         },
         {
             "name": "minicli/stencil",
@@ -2566,16 +2578,16 @@
         },
         {
             "name": "pestphp/pest",
-            "version": "v2.5.3",
+            "version": "v2.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pestphp/pest.git",
-                "reference": "9842e1051d77d3eb1c598dd459b1babfa73a04eb"
+                "reference": "a34767fa15abd098c763db605fd0fc72665b7f69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pestphp/pest/zipball/9842e1051d77d3eb1c598dd459b1babfa73a04eb",
-                "reference": "9842e1051d77d3eb1c598dd459b1babfa73a04eb",
+                "url": "https://api.github.com/repos/pestphp/pest/zipball/a34767fa15abd098c763db605fd0fc72665b7f69",
+                "reference": "a34767fa15abd098c763db605fd0fc72665b7f69",
                 "shasum": ""
             },
             "require": {
@@ -2592,8 +2604,8 @@
                 "webmozart/assert": "<1.11.0"
             },
             "require-dev": {
-                "pestphp/pest-dev-tools": "^2.6.0",
-                "symfony/process": "^6.2.8"
+                "pestphp/pest-dev-tools": "^2.8.0",
+                "symfony/process": "^6.2.10"
             },
             "bin": [
                 "bin/pest"
@@ -2649,7 +2661,7 @@
             ],
             "support": {
                 "issues": "https://github.com/pestphp/pest/issues",
-                "source": "https://github.com/pestphp/pest/tree/v2.5.3"
+                "source": "https://github.com/pestphp/pest/tree/v2.6.0"
             },
             "funding": [
                 {
@@ -2661,7 +2673,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-04-22T22:14:57+00:00"
+            "time": "2023-05-01T23:51:14+00:00"
         },
         {
             "name": "pestphp/pest-plugin",
@@ -3077,16 +3089,16 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "1.20.3",
+            "version": "1.20.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "6c04009f6cae6eda2f040745b6b846080ef069c2"
+                "reference": "7d568c87a9df9c5f7e8b5f075fc469aa8cb0a4cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/6c04009f6cae6eda2f040745b6b846080ef069c2",
-                "reference": "6c04009f6cae6eda2f040745b6b846080ef069c2",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/7d568c87a9df9c5f7e8b5f075fc469aa8cb0a4cd",
+                "reference": "7d568c87a9df9c5f7e8b5f075fc469aa8cb0a4cd",
                 "shasum": ""
             },
             "require": {
@@ -3116,9 +3128,9 @@
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
             "support": {
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.20.3"
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.20.4"
             },
-            "time": "2023-04-25T09:01:03+00:00"
+            "time": "2023-05-02T09:19:37+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -5766,7 +5778,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=8.0",
+        "php": ">=8.1",
         "ext-json": "*",
         "ext-curl": "*",
         "ext-xml": "*"
