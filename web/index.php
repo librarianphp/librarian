@@ -12,11 +12,13 @@ use Librarian\Response;
 
 $app = new App(load_config());
 
-$app->addService('twig', new TwigServiceProvider());
-$app->addService('router', new RouterServiceProvider());
-$app->addService('content', new ContentServiceProvider());
-$app->addService('librarian', new LibrarianServiceProvider());
+// register services
+$services = include __DIR__ . '/../services.php';
+foreach ($services as $serviceName => $service) {
+    $app->addService($serviceName, $service);
+}
 
+$app->addService('router', new RouterServiceProvider());
 $app->librarian->boot();
 
 try {
