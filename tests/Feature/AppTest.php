@@ -36,6 +36,6 @@ it('Boots the app and loads custom Service Providers', function () {
 
 it('Boots the app and loads content', function () {
     $content = $this->app->content->fetch('posts/test0');
-    expect($content->frontMatterGet('title'))->toEqual('Devo Produzir Conteúdo em Português ou Inglês?')
+    expect($content->frontMatterGet('title'))->toBe('Devo Produzir Conteúdo em Português ou Inglês?')
         ->and($content->body_markdown)->toBeString();
 });
