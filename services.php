@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
+use Librarian\Builder\StaticBuilder;
 use Librarian\Provider\ContentServiceProvider;
 use Librarian\Provider\LibrarianServiceProvider;
 use Librarian\Provider\TwigServiceProvider;
-use Librarian\Builder\StaticBuilder;
 
 return [
     /***********************************************

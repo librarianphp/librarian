@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 beforeEach(function () {
     $this->base_url = getConfigValue('app_testing_url');
 });

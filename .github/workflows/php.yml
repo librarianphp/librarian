@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     - name: Validate composer.json and composer.lock
       run: composer validate
@@ -20,8 +20,8 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
 
-    - name: Run test suite
-      run: composer test
+    - name: Check code style
+      run: composer test:lint
 
-    - name: Run php-cs-fixer
-      run: composer csfix
+    - name: Run test suite
+      run: composer test:unit

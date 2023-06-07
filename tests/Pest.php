@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
 |--------------------------------------------------------------------------
 | Test Case
@@ -24,9 +26,7 @@
 |
 */
 
-expect()->extend('toBeOne', function () {
-    return $this->toBe(1);
-});
+expect()->extend('toBeOne', fn () => $this->toBe(1));
 
 /*
 |--------------------------------------------------------------------------
@@ -74,7 +74,7 @@ function getConfigValue(string $key): mixed
     return $config[$key] ?? null;
 }
 
-function getCommandCall(array $parameters = null): CommandCall
+function getCommandCall(?array $parameters = null): CommandCall
 {
     return new CommandCall(array_merge(['minicli'], $parameters));
 }

@@ -1,4 +1,16 @@
-# Librarian
+<div align="center">
+    <h1>Librarian</h1>
+    <h4>Static site builder and Markdown document indexer inspired by Hugo but written in PHP.</h4>
+</div>
+
+<p align="center">
+    <a href="https://packagist.org/packages/librarianphp/librarian"><img src="https://img.shields.io/packagist/v/librarianphp/librarian.svg?style=flat-square" alt="Packagist"></a>
+    <a href="https://packagist.org/packages/librarianphp/librarian"><img src="https://img.shields.io/packagist/php-v/librarianphp/librarian.svg?style=flat-square" alt="PHP from Packagist"></a>
+    <a href="https://github.com/librarianphp/librarian/actions"><img alt="GitHub Workflow Status (main)" src="https://img.shields.io/github/actions/workflow/status/librarianphp/librarian/php.yml?branch=main&label=Tests"> </a>
+</p>
+
+## About
+
 Librarian is a static site builder and Markdown document indexer inspired by Hugo but written in PHP. It uses the same format as DEV.to for markdown files with a front matter and liquid tags for custom functionality.
 The front matter is fluid and doesn't have a fixed spec, meaning you can include any custom fields you want and fetch them from your templates.
 
@@ -40,3 +52,7 @@ The official documentation is available at https://librarianphp.dev. You can [co
 - [sponsoropensource.dev](https://sponsoropensource.dev) - A list of underrepresented open source creators that can be sponsored via GitHub Sponsors.
 - [Librarian Documentation](https://librarianphp.dev) - The official Librarian documentation, built with Librarian.
 - Your project! Send a PR :)
+
+## Contributing
+
+Check the **[Contributing Guide](CONTRIBUTING.md)**.
