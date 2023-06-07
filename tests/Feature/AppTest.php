@@ -1,9 +1,11 @@
 <?php
 
-use Minicli\App;
+declare(strict_types=1);
+
 use Librarian\Provider\ContentServiceProvider;
 use Librarian\Provider\LibrarianServiceProvider;
 use Librarian\Provider\TwigServiceProvider;
+use Minicli\App;
 use Minicli\Command\CommandRegistry;
 
 beforeEach(function () {
@@ -11,7 +13,7 @@ beforeEach(function () {
         'debug' => true,
         'templates_path' => __DIR__ . '/../resources',
         'data_path' => __DIR__ . '/../resources',
-        'cache_path' => __DIR__ . '/../resources'
+        'cache_path' => __DIR__ . '/../resources',
     ];
 
     $app = new App($this->config);
@@ -34,6 +36,6 @@ it('Boots the app and loads custom Service Providers', function () {
 
 it('Boots the app and loads content', function () {
     $content = $this->app->content->fetch('posts/test0');
-    expect($content->frontMatterGet('title'))->toEqual("Devo Produzir Conteúdo em Português ou Inglês?")
+    expect($content->frontMatterGet('title'))->toEqual('Devo Produzir Conteúdo em Português ou Inglês?')
         ->and($content->body_markdown)->toBeString();
 });
