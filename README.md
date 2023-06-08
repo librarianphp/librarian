@@ -1,4 +1,5 @@
 <div align="center">
+    <img src="https://github.com/librarianphp/librarian/raw/main/art/logo.png" alt="Librarian" width="400"/>
     <h1>Librarian</h1>
     <h4>Static site builder and Markdown document indexer inspired by Hugo but written in PHP.</h4>
 </div>
