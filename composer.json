@@ -7,23 +7,20 @@
   "autoload": {
     "psr-4": {
       "App\\": "app/"
-    },
-    "files": [
-      "app/helpers.php"
-    ]
+    }
   },
   "require": {
     "php": ">=8.1",
     "ext-json": "*",
     "ext-curl": "*",
     "ext-xml": "*",
-    "librarianphp/librarian-core": "^4.0",
+    "librarianphp/librarian-core": "^4.2",
     "suin/php-rss-writer": "^1.6",
-    "librarianphp/command-help": "^1.0",
-    "librarianphp/command-create": "^1.0",
-    "librarianphp/command-cache": "^1.0",
-    "librarianphp/command-web": "^1.0",
-    "librarianphp/command-build": "^1.0"
+    "librarianphp/command-help": "^1.1",
+    "librarianphp/command-create": "^1.1",
+    "librarianphp/command-cache": "^1.1",
+    "librarianphp/command-web": "^1.2",
+    "librarianphp/command-build": "^1.2"
   },
   "scripts": {
     "post-install-cmd": [
@@ -38,9 +35,9 @@
     ]
   },
   "require-dev": {
-    "pestphp/pest": "^2.0",
-    "minicli/pest-plugin-curly": "^0.2.1",
-    "friendsofphp/php-cs-fixer": "^3.16",
+    "pestphp/pest": "^2.8",
+    "minicli/pest-plugin-curly": "^0.2",
+    "friendsofphp/php-cs-fixer": "^3.18",
     "laravel/pint": "^1.10"
   },
   "config": {
