@@ -39,12 +39,22 @@ expect()->extend('toBeOne', fn () => $this->toBe(1));
 |
 */
 
+use Librarian\Provider\ContentServiceProvider;
 use Minicli\App;
 use Minicli\Command\CommandCall;
 
 function getApp(): App
 {
-    return new App([], 'Type "./librarian help" for help with available commands.', __DIR__);
+    $app = new App([], 'Type "./librarian help" for help with available commands.', __DIR__ . '/../');
+
+    // Override config for ContentService and reload it
+    $app->config->templates_path = __DIR__ . '/resources';
+    $app->config->data_path = __DIR__ . '/resources';
+    $app->config->cache_path = __DIR__ . '/resources';
+
+    $app->addService('content', new ContentServiceProvider());
+
+    return $app;
 }
 
 function getCommandCall(?array $parameters = null): CommandCall
