@@ -6,7 +6,6 @@ use Librarian\Builder\StaticBuilder;
 use Librarian\Provider\ContentServiceProvider;
 use Librarian\Provider\FeedServiceProvider;
 use Librarian\Provider\LibrarianServiceProvider;
-use Librarian\Provider\RouterServiceProvider;
 use Librarian\Provider\TwigServiceProvider;
 
 return [
@@ -27,7 +26,5 @@ return [
         'feed' => FeedServiceProvider::class,
 
         'builder' => StaticBuilder::class,
-
-        'router' => RouterServiceProvider::class,
     ],
 ];

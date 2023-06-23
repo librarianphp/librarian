@@ -10,6 +10,7 @@ use Librarian\Response;
 use Minicli\App;
 
 $app = new App();
+$app->addService('router', new RouterServiceProvider());
 $app->librarian->boot();
 
 try {
