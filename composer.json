@@ -24,7 +24,7 @@
   },
   "scripts": {
     "post-install-cmd": [
-      "@php -r \"file_exists('config/librarian.php') || copy('librarian_sample.php', 'config/librarian.php');\""
+      "@php -r \"file_exists('config/librarian.php') || copy('config_sample.php', 'config/librarian.php');\""
     ],
     "lint": ["pint"],
     "test:unit" : ["pest"],
