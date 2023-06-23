@@ -10,10 +10,10 @@ require __DIR__ . '/vendor/autoload.php';
 use Minicli\Exception\CommandNotFoundException;
 use Minicli\App;
 
-$app = new App(load_config());
+$app = new App();
 $app->setSignature('
- _      ____  ____   ____    ____  ____   ____   ____  ____  
-| |    |    ||    \ |    \  /    ||    \ |    | /    ||    \ 
+ _      ____  ____   ____    ____  ____   ____   ____  ____
+| |    |    ||    \ |    \  /    ||    \ |    | /    ||    \
 | |     |  | |  o  )|  D  )|  o  ||  D  ) |  | |  o  ||  _  |
 | |___  |  | |     ||    / |     ||    /  |  | |     ||  |  |
 |     | |  | |  O  ||    \ |  _  ||    \  |  | |  _  ||  |  |
@@ -22,12 +22,6 @@ $app->setSignature('
 
 Type "./librarian help" for help with available commands.
 ');
-
-// register services
-$services = include __DIR__ . '/services.php';
-foreach ($services as $serviceName => $service) {
-    $app->addService($serviceName, $service);
-}
 
 $app->librarian->boot();
 

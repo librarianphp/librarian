@@ -5,22 +5,10 @@ declare(strict_types=1);
 use Librarian\Provider\ContentServiceProvider;
 use Librarian\Provider\LibrarianServiceProvider;
 use Librarian\Provider\TwigServiceProvider;
-use Minicli\App;
 use Minicli\Command\CommandRegistry;
 
 beforeEach(function () {
-    $this->config = [
-        'debug' => true,
-        'templates_path' => __DIR__ . '/../resources',
-        'data_path' => __DIR__ . '/../resources',
-        'cache_path' => __DIR__ . '/../resources',
-    ];
-
-    $app = new App($this->config);
-    $app->addService('content', new ContentServiceProvider());
-    $app->addService('twig', new TwigServiceProvider());
-    $app->addService('librarian', new LibrarianServiceProvider());
-    $this->app = $app;
+    $this->app = getApp();
 });
 
 it('Boots the app and loads CommandRegistry', function () {

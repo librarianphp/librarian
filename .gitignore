@@ -1,5 +1,5 @@
 .idea
-config.php
+config/librarian.php
 vendor/
 node_modules/
 .phpunit.result.cache

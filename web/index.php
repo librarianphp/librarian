@@ -9,14 +9,7 @@ use Librarian\Provider\RouterServiceProvider;
 use Librarian\Response;
 use Minicli\App;
 
-$app = new App(load_config());
-
-// register services
-$services = include __DIR__ . '/../services.php';
-foreach ($services as $serviceName => $service) {
-    $app->addService($serviceName, $service);
-}
-
+$app = new App();
 $app->addService('router', new RouterServiceProvider());
 $app->librarian->boot();
 
