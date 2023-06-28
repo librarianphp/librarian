@@ -14,7 +14,7 @@
     "ext-json": "*",
     "ext-curl": "*",
     "ext-xml": "*",
-    "librarianphp/librarian-core": "^4.2",
+    "librarianphp/librarian-core": "^4.3",
     "suin/php-rss-writer": "^1.6",
     "librarianphp/command-help": "^1.1",
     "librarianphp/command-create": "^1.1",
@@ -37,7 +37,6 @@
   "require-dev": {
     "pestphp/pest": "^2.8",
     "minicli/pest-plugin-curly": "^0.2",
-    "friendsofphp/php-cs-fixer": "^3.18",
     "laravel/pint": "^1.10"
   },
   "config": {
