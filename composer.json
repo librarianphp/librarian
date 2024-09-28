@@ -35,8 +35,8 @@
     ]
   },
   "require-dev": {
-    "pestphp/pest": "^2.8",
-    "minicli/pest-plugin-curly": "^0.2",
+    "pestphp/pest": "^3.2",
+    "minicli/pest-plugin-curly": "^0.3",
     "laravel/pint": "^1.10"
   },
   "config": {
