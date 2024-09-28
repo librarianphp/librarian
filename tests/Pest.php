@@ -45,13 +45,12 @@ use Minicli\Command\CommandCall;
 
 function getApp(): App
 {
-    $app = new App([], 'Type "./librarian help" for help with available commands.', __DIR__ . '/../');
-
-    // Override config for ContentService and reload it
-    $app->config->templates_path = __DIR__ . '/resources';
+    $app = new App(
+        [],
+        'Type "./librarian help" for help with available commands.',
+        __DIR__ . '/../'
+    );
     $app->config->data_path = __DIR__ . '/resources';
-    $app->config->cache_path = __DIR__ . '/resources';
-
     $app->addService('content', new ContentServiceProvider());
 
     return $app;
